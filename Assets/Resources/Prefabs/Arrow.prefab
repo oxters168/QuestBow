@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1382916383557003213}
   - component: {fileID: 1382916383557003215}
-  - component: {fileID: 1382916383557003212}
+  - component: {fileID: 1051484281518454367}
+  - component: {fileID: 1676871072578545152}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382916383557003210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1382916384522632751}
@@ -44,20 +45,34 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0.2
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!138 &1382916383557003212
+  m_CollisionDetection: 2
+--- !u!114 &1051484281518454367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382916383557003210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c331ecd917ab9f43a14ba6b58153fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerOfMassOffset: {x: 0, y: 0, z: 0.30000004}
+  centerOfMass: {x: 0.000000002980232, y: 0.0000000044703485, z: 0.8}
+--- !u!138 &1676871072578545152
 FixedJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382916383557003210}
-  m_ConnectedBody: {fileID: 1382916384120458996}
+  m_ConnectedBody: {fileID: 9115737701348377797}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
@@ -76,7 +91,7 @@ GameObject:
   - component: {fileID: 1382916384120459001}
   - component: {fileID: 1382916384120458998}
   - component: {fileID: 1382916384120458999}
-  - component: {fileID: 1382916384120458996}
+  - component: {fileID: 9115737701348377797}
   m_Layer: 0
   m_Name: Tip
   m_TagString: Untagged
@@ -156,7 +171,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1382916384120458996
+--- !u!54 &9115737701348377797
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,7 +186,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &1382916384522632748
 GameObject:
   m_ObjectHideFlags: 0
