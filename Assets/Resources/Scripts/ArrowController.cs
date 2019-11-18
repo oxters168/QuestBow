@@ -8,7 +8,7 @@ public class ArrowController : MonoBehaviour
     {
         mainBody.velocity = Vector3.zero;
         mainBody.angularVelocity = Vector3.zero;
-        tipBody.velocity = Vector3.zero;
-        tipBody.angularVelocity = Vector3.zero;
+        //tipBody.velocity = Vector3.zero;
+        //tipBody.angularVelocity = Vector3.zero;
     }
 }

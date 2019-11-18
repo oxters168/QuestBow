@@ -82,6 +82,8 @@ public class BowmanController : MonoBehaviour
 
             arrowHeld = primaryTriggerValue > 0 && quiverBounds.GetTotalBounds(true).Contains(rightHandControllerPosition);
         }
+
+        bow.SetPullPercent(pullDistance / bow.maxPullDistance);
     }
 
     private void FireArrow()
@@ -91,7 +93,7 @@ public class BowmanController : MonoBehaviour
             arrow.ResetPhysics();
             arrow.transform.position = bow.arrowFireSpot.position;
             arrow.transform.rotation = bow.arrowFireSpot.rotation;
-            arrow.mainBody.velocity = bow.arrowFireSpot.forward * 70 * (pullDistance / bow.maxPullDistance);
+            arrow.mainBody.velocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
         });
     }
 }
