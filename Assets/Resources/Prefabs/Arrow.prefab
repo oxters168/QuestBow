@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1382916383557003213}
   - component: {fileID: 1382916383557003215}
   - component: {fileID: 1051484281518454367}
+  - component: {fileID: 9174925508759913317}
   - component: {fileID: 1676871072578545152}
   m_Layer: 0
   m_Name: Arrow
@@ -63,9 +64,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c331ecd917ab9f43a14ba6b58153fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMassOffset: {x: 0, y: 0, z: 0.16000001}
+  centerOfMassOffset: {x: -5.9604643e-10, y: -8.940698e-10, z: 0.16000001}
   centerOfMass: {x: 0, y: 0, z: 0.36}
   gizmoSize: 0.01
+--- !u!114 &9174925508759913317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382916383557003210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d606cae363971604c9a03f4261c8c9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainBody: {fileID: 1382916383557003215}
+  tipBody: {fileID: 9115737701348377797}
 --- !u!138 &1676871072578545152
 FixedJoint:
   m_ObjectHideFlags: 0

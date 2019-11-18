@@ -66,3 +66,4 @@ MemoryCaptures
 !*.gitkeep
 # Imported
 Assets/Oculus/*
+Assets/TextMesh Pro/*
