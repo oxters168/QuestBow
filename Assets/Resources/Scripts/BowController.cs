@@ -24,16 +24,15 @@ public class BowController : MonoBehaviour
     {
         Vector3 pulledPosition = arrowPlacement.position - arrowPlacement.forward * maxPullDistance * percent;
 
-        Vector3 arrowStartDir = arrowPlacement.position - topString.position;
-        Vector3 pulledDir = pulledPosition - topString.position;
-        float stringAngle = Vector3.SignedAngle(arrowStartDir, pulledDir, topString.InverseTransformDirection(topString.right));
-        float stretchMultiplier = ((stringMaxStretch - stringMinStretch) * percent * percent + stringMinStretch);
+        float adjacentLength = Vector3.Distance(arrowPlacement.position, topString.position);
+        float hypotenuselength = Vector3.Distance(pulledPosition, topString.position);
+        float stringAngle = Mathf.Acos(adjacentLength / hypotenuselength) * Mathf.Rad2Deg;
+
+        float stretchMultiplier = (stringMaxStretch - stringMinStretch) * percent * percent + stringMinStretch;
+
         topString.localRotation = Quaternion.Euler(0, -stringAngle, 0);
         topString.localScale = Vector3.one * stretchMultiplier;
 
-        //arrowStartDir = arrowPlacement.position - bottomString.position;
-        //pulledDir = pulledPosition - bottomString.position;
-        //stringAngle = Vector3.SignedAngle(arrowStartDir, pulledDir, bottomString.right);
         bottomString.localRotation = Quaternion.Euler(0, stringAngle, 0);
         bottomString.localScale = Vector3.one * stretchMultiplier;
     }
