@@ -5,7 +5,9 @@ public class BowmanController : MonoBehaviour
 {
     public ArrowController arrowPrefab;
     public Transform arrowsParent;
-    private ObjectPool<ArrowController> arrowsPool;
+    public ArrowController[] arrowsPool = new ArrowController[5];
+    private int arrowPoolIndex;
+    //private ObjectPool<ArrowController> arrowsPool;
 
     public MimicTransform arrowPlaceholder;
     public Transform quiverBounds;
@@ -18,10 +20,10 @@ public class BowmanController : MonoBehaviour
     public float primaryTriggerValue, secondaryGripValue;
     public OVRInput.Handedness dominantHand = OVRInput.Handedness.RightHanded;
 
-    private void Start()
-    {
-        arrowsPool = new ObjectPool<ArrowController>(arrowPrefab, 10, true, arrowsParent);
-    }
+    //private void Start()
+    //{
+    //    arrowsPool = new ObjectPool<ArrowController>(arrowPrefab, 5, true, arrowsParent);
+    //}
     private void Update()
     {
         GetInput();
@@ -88,12 +90,24 @@ public class BowmanController : MonoBehaviour
 
     private void FireArrow()
     {
-        arrowsPool.Get((arrow) =>
+        GetArrow((arrow) =>
         {
-            arrow.ResetPhysics();
-            arrow.transform.position = bow.arrowFireSpot.position;
-            arrow.transform.rotation = bow.arrowFireSpot.rotation;
-            arrow.mainBody.velocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
+            Vector3 fireVelocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
+            arrow.Translate(bow.arrowFireSpot.position, bow.arrowFireSpot.rotation, fireVelocity);
         });
+        /*arrowsPool.Get((arrow) =>
+        {
+            Vector3 fireVelocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
+            StartCoroutine(arrow.Translate(bow.arrowFireSpot.position, bow.arrowFireSpot.rotation, fireVelocity));
+        });*/
+    }
+    private void GetArrow(System.Action<ArrowController> onGot)
+    {
+        if (arrowsPool[arrowPoolIndex] != null)
+            Destroy(arrowsPool[arrowPoolIndex].gameObject);
+
+        arrowsPool[arrowPoolIndex] = Instantiate(arrowPrefab);
+        onGot(arrowsPool[arrowPoolIndex]);
+        arrowPoolIndex = (arrowPoolIndex + 1) % arrowsPool.Length;
     }
 }
