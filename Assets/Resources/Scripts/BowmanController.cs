@@ -7,7 +7,6 @@ public class BowmanController : MonoBehaviour
     public Transform arrowsParent;
     public ArrowController[] arrowsPool = new ArrowController[5];
     private int arrowPoolIndex;
-    //private ObjectPool<ArrowController> arrowsPool;
 
     public MimicTransform arrowPlaceholder;
     public Transform quiverBounds;
@@ -20,10 +19,6 @@ public class BowmanController : MonoBehaviour
     public float primaryTriggerValue, secondaryGripValue;
     public OVRInput.Handedness dominantHand = OVRInput.Handedness.RightHanded;
 
-    //private void Start()
-    //{
-    //    arrowsPool = new ObjectPool<ArrowController>(arrowPrefab, 5, true, arrowsParent);
-    //}
     private void Update()
     {
         GetInput();
@@ -95,11 +90,6 @@ public class BowmanController : MonoBehaviour
             Vector3 fireVelocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
             arrow.Translate(bow.arrowFireSpot.position, bow.arrowFireSpot.rotation, fireVelocity);
         });
-        /*arrowsPool.Get((arrow) =>
-        {
-            Vector3 fireVelocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
-            StartCoroutine(arrow.Translate(bow.arrowFireSpot.position, bow.arrowFireSpot.rotation, fireVelocity));
-        });*/
     }
     private void GetArrow(System.Action<ArrowController> onGot)
     {

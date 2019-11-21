@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityHelpers;
 
 public class ArrowController : MonoBehaviour
@@ -7,27 +6,66 @@ public class ArrowController : MonoBehaviour
     public Rigidbody mainBody, tipBody;
     private FixedJoint joint;
     public TreeCollider treeCollider;
+    //public float minimumPenetrationSpeed = 2;
+    public float minimumPenetrationAngle = 30;
+
+    public TargetController.ScoreColliderData scoreTarget { get; internal set; }
+
+    public Vector3 previousVelocity { get; private set; }
+    public Vector3 previousForward { get; private set; }
 
     private void Start()
     {
         joint = GetComponent<FixedJoint>();
         treeCollider.onCollided.AddListener(OnCollided);
     }
-
-    private void OnCollided(TreeCollider.CollisionInfo colInfo)
+    private void FixedUpdate()
     {
-        if (!colInfo.isTrigger && !colInfo.collidedWith.tag.Equals("Arrow"))
+        if (tipBody != null)
         {
-            SetStuck(true, colInfo.collidedWith.transform);
+            previousVelocity = mainBody.velocity;
+            previousForward = mainBody.transform.forward;
         }
     }
-    private void SetStuck(bool onOff, Transform parent = null)
+
+    public Transform GetStuckTarget()
     {
-        mainBody.isKinematic = onOff;
-        tipBody.isKinematic = onOff;
+        return transform.parent;
+    }
+    private void OnCollided(TreeCollider.CollisionInfo colInfo)
+    {
+        if (!colInfo.isTrigger && colInfo.collisionState == TreeCollider.CollisionInfo.CollisionState.enter && !colInfo.collidedWith.tag.Equals("Arrow"))
+        {
+            float penetrationAngle = Vector3.Angle(previousForward, previousVelocity.normalized);
+            DebugPanel.Log(name + " puncture angle", penetrationAngle, 5);
+            if (penetrationAngle <= minimumPenetrationAngle)
+            {
+                var contactPoint = colInfo.collision.GetContact(0);
+                Vector3 punctureDirection = previousForward;
+                Debug.DrawRay(contactPoint.point, -punctureDirection, Color.red, 1000);
+                float arrowLength = transform.GetTotalBounds(false, false).size.z;
+                Vector3 stuckPosition = contactPoint.point - punctureDirection * arrowLength;
+                SetStuck(stuckPosition, punctureDirection, colInfo.collidedWith.transform);
+            }
+        }
+    }
+    public Vector3 GetTipPosition()
+    {
+        float arrowLength = transform.GetTotalBounds(false, false).size.z;
+        return transform.position + transform.forward * arrowLength;
+    }
+    private void SetStuck(Vector3 position, Vector3 forward, Transform parent)
+    {
+        Destroy(joint);
+        Destroy(mainBody);
+        Destroy(tipBody);
+        //mainBody.isKinematic = onOff;
+        //tipBody.isKinematic = onOff;
+        transform.position = position;
+        transform.forward = forward;
         transform.SetParent(parent);
-        if (parent == null)
-            transform.localScale = Vector3.one;
+        //if (parent == null)
+        //    transform.localScale = Vector3.one;
     }
 
     public void Translate(Vector3 position, Quaternion rotation, Vector3 velocity)
@@ -46,47 +84,4 @@ public class ArrowController : MonoBehaviour
         tipBody.velocity = Vector3.zero;
         tipBody.angularVelocity = Vector3.zero;
     }
-    /*public IEnumerator Translate(Vector3 position, Quaternion rotation, Vector3 velocity)
-    {
-        return ResetPhysicsProperly(() =>
-        {
-            transform.position = position;
-            transform.rotation = rotation;
-        },
-        () =>
-        {
-            mainBody.velocity = velocity;
-        });
-    }
-    private IEnumerator ResetPhysicsProperly(System.Action preWait = null, System.Action onReset = null)
-    {
-        SetStuck(false);
-
-        preWait?.Invoke();
-
-        ResetPhysics();
-        mainBody.Sleep();
-        tipBody.Sleep();
-
-        yield return new WaitForFixedUpdate();
-
-        DestroyImmediate(joint);
-        joint = gameObject.AddComponent<FixedJoint>();
-        joint.connectedBody = tipBody;
-
-        ResetPhysics();
-
-        yield return new WaitForFixedUpdate();
-
-        mainBody.WakeUp();
-        tipBody.WakeUp();
-
-        ResetPhysics();
-
-        yield return new WaitForFixedUpdate();
-
-        ResetPhysics();
-
-        onReset?.Invoke();
-    }*/
 }

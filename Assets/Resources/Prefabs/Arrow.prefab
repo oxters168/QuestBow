@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382916383557003213}
   - component: {fileID: 1382916383557003215}
+  - component: {fileID: 5765711270691303410}
   - component: {fileID: 9174925508759913317}
   - component: {fileID: 3715587761397623136}
   - component: {fileID: 7466760181225018297}
@@ -54,6 +55,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &5765711270691303410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382916383557003210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c331ecd917ab9f43a14ba6b58153fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerOfMassOffset: {x: 0, y: 0, z: 0.3646}
+  centerOfMass: {x: 0, y: 0, z: 0.88}
+  gizmoSize: 0.03
 --- !u!114 &9174925508759913317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +85,7 @@ MonoBehaviour:
   mainBody: {fileID: 1382916383557003215}
   tipBody: {fileID: 3695133254947610486}
   treeCollider: {fileID: 3715587761397623136}
+  minimumPenetrationAngle: 30
 --- !u!114 &3715587761397623136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +161,7 @@ GameObject:
   - component: {fileID: 1382916384120458998}
   - component: {fileID: 1382916384120458999}
   - component: {fileID: 6113965762788243348}
+  - component: {fileID: 3885888496537362740}
   m_Layer: 0
   m_Name: Tip
   m_TagString: Arrow
@@ -239,6 +257,54 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3885888496537362740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382916384120458994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62180964e16659648adeb7dcb84cfd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMessages: 0
+  onCollided:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1382916384522632748
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +317,7 @@ GameObject:
   - component: {fileID: 1382916384522632754}
   - component: {fileID: 1382916384522632755}
   - component: {fileID: 1382916384522632752}
+  - component: {fileID: 2248542545966293740}
   m_Layer: 0
   m_Name: Shaft
   m_TagString: Arrow
@@ -331,6 +398,54 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2248542545966293740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382916384522632748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62180964e16659648adeb7dcb84cfd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMessages: 0
+  onCollided:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &5091710342238230968
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +490,7 @@ GameObject:
   - component: {fileID: 3695133254947610486}
   - component: {fileID: 1502898986355373278}
   - component: {fileID: 5364394966631282443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tip
   m_TagString: Arrow
   m_Icon: {fileID: 0}
@@ -450,8 +565,8 @@ Rigidbody:
   m_GameObject: {fileID: 6017617507963064986}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.05
-  m_AngularDrag: 0.05
+  m_Drag: 0.005
+  m_AngularDrag: 0.005
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -640,9 +755,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.02
-  m_Height: 1.15
+  m_Height: 1.24
   m_Direction: 1
-  m_Center: {x: 0, y: 0.56, z: 0}
+  m_Center: {x: 0, y: 0.52, z: 0}
 --- !u!114 &4245165133615699860
 MonoBehaviour:
   m_ObjectHideFlags: 0
