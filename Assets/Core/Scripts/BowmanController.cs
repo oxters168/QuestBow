@@ -3,11 +3,6 @@ using UnityHelpers;
 
 public class BowmanController : MonoBehaviour
 {
-    public ArrowController arrowPrefab;
-    public Transform arrowsParent;
-    public ArrowController[] arrowsPool = new ArrowController[5];
-    private int arrowPoolIndex;
-
     public MimicTransform arrowPlaceholder;
     public Transform quiverBounds;
     public BowController bow;
@@ -24,7 +19,7 @@ public class BowmanController : MonoBehaviour
         GetInput();
 
         if (arrowHeld && arrowInPlace && primaryTriggerValue <= 0)
-            FireArrow();
+            bow.FireArrow();
 
         UpdatePlaceholderArrow();
 
@@ -81,23 +76,5 @@ public class BowmanController : MonoBehaviour
         }
 
         bow.SetPullPercent(pullDistance / bow.maxPullDistance);
-    }
-
-    private void FireArrow()
-    {
-        GetArrow((arrow) =>
-        {
-            Vector3 fireVelocity = bow.arrowFireSpot.forward * bow.maxLaunchSpeed * (pullDistance / bow.maxPullDistance);
-            arrow.Translate(bow.arrowFireSpot.position, bow.arrowFireSpot.rotation, fireVelocity);
-        });
-    }
-    private void GetArrow(System.Action<ArrowController> onGot)
-    {
-        if (arrowsPool[arrowPoolIndex] != null)
-            Destroy(arrowsPool[arrowPoolIndex].gameObject);
-
-        arrowsPool[arrowPoolIndex] = Instantiate(arrowPrefab);
-        onGot(arrowsPool[arrowPoolIndex]);
-        arrowPoolIndex = (arrowPoolIndex + 1) % arrowsPool.Length;
     }
 }

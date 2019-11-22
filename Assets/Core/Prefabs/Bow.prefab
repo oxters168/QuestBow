@@ -959,14 +959,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41eb8efde3183034893c69b1e736fead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 9174925508759913317, guid: aeddf94cf06cc2a41b9379420989840e,
+    type: 3}
+  arrowsPool:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   arrowPlacement: {fileID: 91664805525452338}
   arrowFireSpot: {fileID: 5081530324705732312}
   minArrowDistanceSqr: 0.01
   maxPullDistance: 0.7
   maxLaunchSpeed: 200
+  stringMinStretch: 1
+  stringMaxStretch: 1.675
   topString: {fileID: 6093939393044405317}
   bottomString: {fileID: 5614100065183131765}
-  testPercent: 0
 --- !u!1 &8746938502769964297
 GameObject:
   m_ObjectHideFlags: 0

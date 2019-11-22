@@ -47,6 +47,10 @@ public class ArrowController : MonoBehaviour
     {
         if (!colInfo.isTrigger && colInfo.collisionState == TreeCollider.CollisionInfo.CollisionState.enter && !colInfo.collidedWith.tag.Equals("Arrow"))
         {
+            BirdController bird = colInfo.collidedWith.GetComponentInParent<BirdController>();
+            if (bird != null)
+                bird.Kill();
+
             float penetrationAngle = Vector3.Angle(previousForward, previousVelocity.normalized);
             DebugPanel.Log(name + " puncture angle", penetrationAngle, 5);
             if (penetrationAngle <= minimumPenetrationAngle)
