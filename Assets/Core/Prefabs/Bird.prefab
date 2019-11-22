@@ -223,7 +223,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: b34c1bf2c306d9847b9a0fc6847f1106, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 0
@@ -298,6 +298,8 @@ MonoBehaviour:
   glideMax: 5
   flapMin: 2
   flapMax: 4
+  isGliding: 0
+  isDead: 0
 --- !u!1 &6823671734913696170
 GameObject:
   m_ObjectHideFlags: 0

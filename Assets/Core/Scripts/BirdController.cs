@@ -27,14 +27,12 @@ public class BirdController : MonoBehaviour
     public void Kill()
     {
         isDead = true;
-        //birdAnimator.applyRootMotion = false;
         birdBody.isKinematic = false;
     }
     public void Revive()
     {
         isDead = false;
         birdBody.isKinematic = true;
-        //birdAnimator.applyRootMotion = true;
     }
     public void SetRandomSkin()
     {

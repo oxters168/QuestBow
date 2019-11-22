@@ -49,7 +49,10 @@ public class ArrowController : MonoBehaviour
         {
             BirdController bird = colInfo.collidedWith.GetComponentInParent<BirdController>();
             if (bird != null)
+            {
                 bird.Kill();
+                bird.birdBody.AddForce(previousVelocity, ForceMode.Impulse);
+            }
 
             float penetrationAngle = Vector3.Angle(previousForward, previousVelocity.normalized);
             DebugPanel.Log(name + " puncture angle", penetrationAngle, 5);
