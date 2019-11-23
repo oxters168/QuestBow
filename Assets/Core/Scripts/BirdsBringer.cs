@@ -40,7 +40,7 @@ public class BirdsBringer : MonoBehaviour
         prevSpawnTime = Time.time;
         currentSpawnTime = Random.Range(spawnMinRate, spawnMaxRate);
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         var cubeMatrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);

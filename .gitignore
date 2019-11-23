@@ -63,13 +63,58 @@ $RECYCLE.BIN/
 
 MemoryCaptures
 
-!*.gitkeep
+!*.gitkeep #Not working, so adding for each one
 # Imported
-Assets/Oculus/*
-Assets/TextMesh Pro/*
-Assets/Malbers Animations/Animal Controller/*
-Assets/Malbers Animations/Common/*
-Assets/Malbers Animations/Horse AnimSet Pro/*
-Assets/ProCore/*
-Assets/ProCore.meta
-Assets/Malbers Animations/Animals Packs/02 Birds Pack/*
+Assets/Imported Assets/Oculus/*
+!Assets/Imported Assets/Oculus/.gitkeep
+
+Assets/Imported Assets/TextMesh Pro/*
+!Assets/Imported Assets/TextMesh Pro/.gitkeep
+
+Assets/Imported Assets/Malbers Animations/Animal Controller/*
+Assets/Imported Assets/Malbers Animations/Animal Controller.meta
+Assets/Imported Assets/Malbers Animations/Common/*
+Assets/Imported Assets/Malbers Animations/Common.meta
+Assets/Imported Assets/Malbers Animations/Horse AnimSet Pro/*
+!Assets/Imported Assets/Malbers Animations/Horse AnimSet Pro/.gitkeep
+
+Assets/Imported Assets/ProCore/*
+!Assets/Imported Assets/ProCore/.gitkeep
+
+Assets/Imported Assets/Malbers Animations/Animals Packs/02 Birds Pack/*
+!Assets/Imported Assets/Malbers Animations/Animals Packs/02 Birds Pack/.gitkeep
+
+Assets/Imported Assets/PolygonDungeon/*
+!Assets/Imported Assets/PolygonDungeon/.gitkeep
+
+Assets/Imported Assets/PolygonKnights/*
+!Assets/Imported Assets/PolygonKnights/.gitkeep
+
+Assets/Imported Assets/PolygonNature/*
+!Assets/Imported Assets/PolygonNature/.gitkeep
+
+Assets/Imported Assets/PolygonPirates/*
+!Assets/Imported Assets/PolygonPirates/.gitkeep
+
+Assets/Imported Assets/PolygonSamurai/*
+!Assets/Imported Assets/PolygonSamurai/.gitkeep
+
+Assets/Imported Assets/PolygonWestern/*
+!Assets/Imported Assets/PolygonWestern/.gitkeep
+
+Assets/Imported Assets/MeshCombineStudio/*
+!Assets/Imported Assets/MeshCombineStudio/.gitkeep
+
+#Puppet Master
+Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/*
+!Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/.gitkeep
+Assets/Imported Assets/Plugins/RootMotion/Baker/*
+Assets/Imported Assets/Plugins/RootMotion/Baker.meta
+Assets/Imported Assets/Plugins/RootMotion/Editor/*
+Assets/Imported Assets/Plugins/RootMotion/Editor.meta
+Assets/Imported Assets/Plugins/RootMotion/RagdollManager/*
+Assets/Imported Assets/Plugins/RootMotion/RagdollManager.meta
+Assets/Imported Assets/Plugins/RootMotion/Shared Demo Assets/*
+Assets/Imported Assets/Plugins/RootMotion/Shared Demo Assets.meta
+Assets/Imported Assets/Plugins/RootMotion/Shared Scripts/*
+Assets/Imported Assets/Plugins/RootMotion/Shared Scripts.meta
