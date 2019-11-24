@@ -65,8 +65,8 @@ MemoryCaptures
 
 !*.gitkeep #Not working, so adding for each one
 # Imported
-Assets/Imported Assets/Oculus/*
-!Assets/Imported Assets/Oculus/.gitkeep
+Assets/Oculus/*
+!Assets/Oculus/.gitkeep
 
 Assets/Imported Assets/TextMesh Pro/*
 !Assets/Imported Assets/TextMesh Pro/.gitkeep
@@ -104,6 +104,9 @@ Assets/Imported Assets/PolygonWestern/*
 
 Assets/Imported Assets/MeshCombineStudio/*
 !Assets/Imported Assets/MeshCombineStudio/.gitkeep
+
+Assets/Imported Assets/Mixamo/*
+!Assets/Imported Assets/Mixamo/.gitkeep
 
 #Puppet Master
 Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/*
