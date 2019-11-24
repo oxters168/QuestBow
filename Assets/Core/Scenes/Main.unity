@@ -467,7 +467,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh347940
+  m_Name: pb_Mesh376952
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1095,6 +1095,7 @@ MonoBehaviour:
       type: 3}
     poolSize: 5
     reuseObjectsInUse: 1
+    dynamicSize: 0
     poolParent: {fileID: 1248259694}
     worldPositionStays: 0
   - poolName: BirdsPool
@@ -1102,13 +1103,15 @@ MonoBehaviour:
       type: 3}
     poolSize: 5
     reuseObjectsInUse: 1
+    dynamicSize: 0
     poolParent: {fileID: 459421151}
     worldPositionStays: 0
   - poolName: EnemiesPool
     poolPrefab: {fileID: 5783508728106233761, guid: e50db1ca56a921143be61c5113ec0270,
       type: 3}
     poolSize: 5
-    reuseObjectsInUse: 1
+    reuseObjectsInUse: 0
+    dynamicSize: 0
     poolParent: {fileID: 1598640272}
     worldPositionStays: 0
 --- !u!4 &629142699
@@ -1945,6 +1948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0747660d29dca478df9956fe47a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesPoolName: EnemiesPool
+  mainEnemyTarget: {fileID: 488217179}
 --- !u!4 &1312266199
 Transform:
   m_ObjectHideFlags: 0
