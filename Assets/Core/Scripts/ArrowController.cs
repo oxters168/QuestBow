@@ -8,6 +8,7 @@ public class ArrowController : MonoBehaviour
     public TreeCollider treeCollider;
     //public float minimumPenetrationSpeed = 2;
     public float minimumPenetrationAngle = 30;
+    public float maxHurtValue = 20;
 
     [Range(0, float.MaxValue)]
     public float upCorrectionMaxTorque = 1;
@@ -47,12 +48,15 @@ public class ArrowController : MonoBehaviour
     {
         if (!colInfo.isTrigger && colInfo.collisionState == TreeCollider.CollisionInfo.CollisionState.enter && !colInfo.collidedWith.tag.Equals("Arrow"))
         {
-            BirdController bird = colInfo.collidedWith.GetComponentInParent<BirdController>();
-            if (bird != null)
+            HealthController hitHealth = colInfo.collidedWith.GetComponentInParent<HealthController>();
+            if (hitHealth != null)
             {
-                bird.Kill();
-                bird.birdBody.AddForce(previousVelocity, ForceMode.Impulse);
+                //Need to calculate hurt value
+                hitHealth.HurtValue(maxHurtValue);
             }
+            Rigidbody hitBody = colInfo.collidedWith.GetComponentInParent<Rigidbody>();
+            if (hitBody != null)
+                hitBody.AddForce(previousVelocity, ForceMode.Impulse);
 
             float penetrationAngle = Vector3.Angle(previousForward, previousVelocity.normalized);
             DebugPanel.Log(name + " puncture angle", penetrationAngle, 5);
