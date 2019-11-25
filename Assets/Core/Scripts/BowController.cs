@@ -17,13 +17,15 @@ public class BowController : MonoBehaviour
     public float pullPercent { get; private set; }
 
     public Transform topString, bottomString;
-    //[Range(0, 1)]
-    //public float testPercent;
 
     private void Update()
     {
         Debug.DrawRay(transform.position, transform.right, Color.blue);
-        //SetPullPercent(testPercent);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(arrowPlacement.position, minArrowDistanceSqr * minArrowDistanceSqr);
     }
 
     public void SetPullPercent(float percent)
@@ -46,7 +48,9 @@ public class BowController : MonoBehaviour
     }
     public bool AtArrowPosition(Vector3 position)
     {
-        return (position - arrowPlacement.position).sqrMagnitude < minArrowDistanceSqr;
+        var distanceSqr = (position - arrowPlacement.position).sqrMagnitude;
+        DebugPanel.Log("Distance sqr from arrow to bow", distanceSqr);
+        return distanceSqr <= minArrowDistanceSqr;
     }
     public float PullAmount(Vector3 position)
     {

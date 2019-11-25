@@ -1973,6 +1973,7 @@ MonoBehaviour:
   speed: 0.33
   rotationSpeed: 10
   minimumAngleOffset: 1
+  respawnTime: 10
   target: {fileID: 0}
   puppet: {fileID: 7797542272418296733}
   accurateSelf: {fileID: 5783508728233771190}
@@ -6206,18 +6207,7 @@ MonoBehaviour:
       resetNormalizedTime: 1
     unityEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7797542272418296733}
-          m_MethodName: SwitchToKinematicMode
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   onGetUpSupine:
@@ -6229,18 +6219,7 @@ MonoBehaviour:
       resetNormalizedTime: 1
     unityEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7797542272418296733}
-          m_MethodName: SwitchToKinematicMode
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   onLoseBalance:
@@ -6276,18 +6255,7 @@ MonoBehaviour:
     animations: []
     unityEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7797542272418296733}
-          m_MethodName: SwitchToActiveMode
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   canMoveTarget: 1

@@ -8,9 +8,13 @@ public class EnemyController : MonoBehaviour
     public float rotationSpeed = 1f;
     public float minimumAngleOffset = 0.1f;
 
+    public float respawnTime = 3;
+
     public Transform target;
     public RootMotion.Dynamics.PuppetMaster puppet;
     public Transform accurateSelf;
+
+    public bool isDead { get { return puppet.state == RootMotion.Dynamics.PuppetMaster.State.Dead; } }
 
     private void Update()
     {
