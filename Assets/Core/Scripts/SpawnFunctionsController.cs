@@ -5,14 +5,14 @@ public class SpawnFunctionsController : MonoBehaviour
 {
     public string enemiesPoolName;
     private ObjectPool<Transform> enemiesPool;
-    private Transform arrowStartTransform;
+    //private Transform arrowStartTransform;
     public FocusCameraController arrowCamera;
     public Transform mainEnemyTarget;
 
     private void Start()
     {
         enemiesPool = PoolManager.GetPool(enemiesPoolName);
-        arrowStartTransform = new GameObject("Arrow Start Position").transform;
+        //arrowStartTransform = new GameObject("Arrow Start Position").transform;
     }
 
     public void OnBirdSpawned(Transform birdTransform)
@@ -43,9 +43,9 @@ public class SpawnFunctionsController : MonoBehaviour
     }
     public void OnArrowSpawned(Transform arrowTransform)
     {
-        arrowStartTransform.position = arrowTransform.position;
+        //arrowStartTransform.position = arrowTransform.position;
         arrowCamera.ClearTargets();
-        arrowCamera.AddTarget(arrowStartTransform);
+        //arrowCamera.AddTarget(arrowStartTransform);
         arrowCamera.AddTarget(arrowTransform);
     }
 }

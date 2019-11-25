@@ -3,13 +3,13 @@ using UnityHelpers;
 
 public class TargetController : MonoBehaviour
 {
-    public TreeCollider treeColider;
+    public TreeCollider treeCollider;
     [Tooltip("Should be in ascending order")]
     public ScoreColliderData[] targetScores;
 
     private void Start()
     {
-        treeColider.onCollided.AddListener(OnCollided);
+        treeCollider.onCollided.AddListener(OnCollided);
     }
 
     private void OnCollided(TreeCollider.CollisionInfo colInfo)
@@ -17,6 +17,10 @@ public class TargetController : MonoBehaviour
         if (!colInfo.isTrigger && colInfo.collidedWith.tag.Equals("Arrow"))
         {
             var arrow = colInfo.collidedWith.GetComponentInParent<ArrowController>();
+
+            DebugPanel.Log("Target hit by an arrow", arrow != null, 3);
+            if (arrow != null)
+                DebugPanel.Log("Arrow root", arrow.GetStuckTarget().root.name, 3);
 
             if (arrow != null && arrow.GetStuckTarget().root == transform)
             {

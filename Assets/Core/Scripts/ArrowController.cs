@@ -66,9 +66,7 @@ public class ArrowController : MonoBehaviour
                 var contactPoint = colInfo.collision.GetContact(0);
                 Vector3 punctureDirection = previousForward;
                 Debug.DrawRay(contactPoint.point, -punctureDirection, Color.red, 1000);
-                float arrowLength = renderingRoot.GetTotalBounds(false, false).size.z;
-                Vector3 stuckPosition = contactPoint.point - punctureDirection * arrowLength;
-                SetStuck(stuckPosition, punctureDirection, colInfo.collidedWith.transform);
+                SetStuck(contactPoint.point, punctureDirection, colInfo.collidedWith.transform);
             }
         }
     }
@@ -84,8 +82,11 @@ public class ArrowController : MonoBehaviour
         Destroy(tipBody);
         //mainBody.isKinematic = onOff;
         //tipBody.isKinematic = onOff;
+
         transform.SetParent(parent);
-        transform.position = position;
+
+        float arrowLength = renderingRoot.GetTotalBounds(false, false).size.z;
+        transform.position = position - forward * arrowLength;
         transform.forward = forward;
         //if (parent == null)
         //    transform.localScale = Vector3.one;

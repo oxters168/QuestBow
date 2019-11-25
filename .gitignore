@@ -108,6 +108,9 @@ Assets/Imported Assets/MeshCombineStudio/*
 Assets/Imported Assets/Mixamo/*
 !Assets/Imported Assets/Mixamo/.gitkeep
 
+Assets/Imported Assets/Wristwatch/*
+!Assets/Imported Assets/Wristwatch/.gitkeep
+
 #Puppet Master
 Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/*
 !Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/.gitkeep
