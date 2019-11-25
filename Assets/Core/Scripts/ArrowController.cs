@@ -3,6 +3,7 @@ using UnityHelpers;
 
 public class ArrowController : MonoBehaviour
 {
+    public Transform renderingRoot;
     public Rigidbody mainBody, tipBody;
     private FixedJoint joint;
     public TreeCollider treeCollider;
@@ -65,7 +66,7 @@ public class ArrowController : MonoBehaviour
                 var contactPoint = colInfo.collision.GetContact(0);
                 Vector3 punctureDirection = previousForward;
                 Debug.DrawRay(contactPoint.point, -punctureDirection, Color.red, 1000);
-                float arrowLength = transform.GetTotalBounds(false, false).size.z;
+                float arrowLength = renderingRoot.GetTotalBounds(false, false).size.z;
                 Vector3 stuckPosition = contactPoint.point - punctureDirection * arrowLength;
                 SetStuck(stuckPosition, punctureDirection, colInfo.collidedWith.transform);
             }
@@ -83,9 +84,9 @@ public class ArrowController : MonoBehaviour
         Destroy(tipBody);
         //mainBody.isKinematic = onOff;
         //tipBody.isKinematic = onOff;
+        transform.SetParent(parent);
         transform.position = position;
         transform.forward = forward;
-        transform.SetParent(parent);
         //if (parent == null)
         //    transform.localScale = Vector3.one;
     }

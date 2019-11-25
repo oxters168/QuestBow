@@ -74,7 +74,7 @@ public class BirdController : MonoBehaviour
         }
         birdAnimator.SetBool("Flap", !isGliding);
         birdAnimator.SetBool("Dead", isDead);
-        birdAnimator.SetBool("Grounded", transform.IsGrounded());
+        birdAnimator.SetBool("Grounded", transform.IsGrounded(0.1f, true));
     }
     private void Move()
     {

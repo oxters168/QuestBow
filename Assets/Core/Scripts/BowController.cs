@@ -18,6 +18,8 @@ public class BowController : MonoBehaviour
 
     public Transform topString, bottomString;
 
+    public PoolSpawner.SpawnEvent onArrowSpawn;
+
     private void Update()
     {
         Debug.DrawRay(transform.position, transform.right, Color.blue);
@@ -68,6 +70,7 @@ public class BowController : MonoBehaviour
         {
             Vector3 fireVelocity = arrowFireSpot.forward * maxLaunchSpeed * pullPercent;
             arrow.Translate(arrowFireSpot.position, arrowFireSpot.rotation, fireVelocity);
+            onArrowSpawn?.Invoke(arrow.transform);
         });
     }
     private void GetArrow(System.Action<ArrowController> onGot)

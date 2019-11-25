@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4167196469553912604}
   - component: {fileID: 4156773754718967004}
   - component: {fileID: 4146505211832992104}
+  - component: {fileID: 4506970581442696172}
   m_Layer: 2
   m_Name: Arrow
   m_TagString: Arrow
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &4506970581442696172
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168472196165949098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.032954562
+  m_Height: 1.2357966
+  m_Direction: 1
+  m_Center: {x: 0.0003700629, y: 0.5175528, z: -0.009279861}
 --- !u!1 &6946532362165049859
 GameObject:
   m_ObjectHideFlags: 0

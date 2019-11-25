@@ -20,15 +20,15 @@ public class EnemyController : MonoBehaviour
     {
         if (puppet.isAlive)
         {
-            transform.position += accurateSelf.forward * speed * Time.deltaTime;
+            puppet.targetRoot.position += accurateSelf.forward * speed * Time.deltaTime;
             if (target != null)
             {
-                Vector3 targetDirection = (target.position - transform.position).normalized;
+                Vector3 targetDirection = (target.position - puppet.targetRoot.position).normalized;
                 float targetAngle = Vector3.SignedAngle(accurateSelf.forward, targetDirection, Vector3.up);
                 if (targetAngle < -minimumAngleOffset || targetAngle > minimumAngleOffset)
                 {
                     float nextRotation = Mathf.Min(Mathf.Abs(targetAngle), rotationSpeed * Time.deltaTime);
-                    transform.Rotate(Vector3.up * nextRotation * Mathf.Sign(targetAngle));
+                    puppet.targetRoot.Rotate(Vector3.up * nextRotation * Mathf.Sign(targetAngle));
                 }
             }
         }
