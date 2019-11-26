@@ -72,7 +72,7 @@ public class ArrowController : MonoBehaviour
     }
     public Vector3 GetTipPosition()
     {
-        float arrowLength = transform.GetTotalBounds(false, false).size.z;
+        float arrowLength = renderingRoot.GetTotalBounds(false, false).size.z;
         return transform.position + transform.forward * arrowLength;
     }
     private void SetStuck(Vector3 position, Vector3 forward, Transform parent)

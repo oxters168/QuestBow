@@ -6,7 +6,7 @@ public class SpawnFunctionsController : MonoBehaviour
     public string enemiesPoolName;
     private ObjectPool<Transform> enemiesPool;
     //private Transform arrowStartTransform;
-    public FocusCameraController arrowCamera;
+    public OrbitCameraController arrowCamera;
     public Transform mainEnemyTarget;
 
     private void Start()
@@ -43,9 +43,10 @@ public class SpawnFunctionsController : MonoBehaviour
     }
     public void OnArrowSpawned(Transform arrowTransform)
     {
+        arrowCamera.target = arrowTransform;
         //arrowStartTransform.position = arrowTransform.position;
-        arrowCamera.ClearTargets();
+        //arrowCamera.ClearTargets();
         //arrowCamera.AddTarget(arrowStartTransform);
-        arrowCamera.AddTarget(arrowTransform);
+        //arrowCamera.AddTarget(arrowTransform);
     }
 }

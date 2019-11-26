@@ -18,23 +18,24 @@ public class TargetController : MonoBehaviour
         {
             var arrow = colInfo.collidedWith.GetComponentInParent<ArrowController>();
 
-            DebugPanel.Log("Target hit by an arrow", arrow != null, 3);
-            if (arrow != null)
-                DebugPanel.Log("Arrow root", arrow.GetStuckTarget().root.name, 3);
-
             if (arrow != null && arrow.GetStuckTarget().root == transform)
             {
                 arrow.scoreTarget = GetScore(arrow.GetTipPosition());
 
-                DebugPanel.Log("Arrow hit target", arrow.scoreTarget.score, 3);
-
-                var scoresPool = PoolManager.GetPool("ScoresPool");
-                scoresPool.Get<FlyingScoreController>(score =>
+                if (arrow.scoreTarget != null)
                 {
-                    score.transform.position = transform.position;
-                    score.scoreLabel.text = arrow.scoreTarget.score.ToString();
-                    StartCoroutine(CommonRoutines.WaitToDoAction(success => { scoresPool.Return(score.transform); }, score.ttl));
-                });
+                    DebugPanel.Log("Arrow hit target", arrow.scoreTarget.score, 3);
+
+                    var scoresPool = PoolManager.GetPool("ScoresPool");
+                    scoresPool.Get<FlyingScoreController>(score =>
+                    {
+                        score.transform.position = transform.position;
+                        score.scoreLabel.text = arrow.scoreTarget.score.ToString();
+                        StartCoroutine(CommonRoutines.WaitToDoAction(success => { scoresPool.Return(score.transform); }, score.ttl));
+                    });
+                }
+                else
+                    DebugPanel.Log("Arrow hit target but somehow without a score", "", 3);
             }
         }
     }
