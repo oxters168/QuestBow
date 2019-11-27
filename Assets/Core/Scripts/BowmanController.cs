@@ -17,6 +17,10 @@ public class BowmanController : MonoBehaviour
     //public bool secondaryLowerButton, secondaryHigherButton;
     public OVRInput.Handedness dominantHand = OVRInput.Handedness.RightHanded;
 
+    private void Start()
+    {
+        OVRManager.fixedFoveatedRenderingLevel = OVRManager.FixedFoveatedRenderingLevel.HighTop; //Will change where this is called to be more appropriate
+    }
     private void Update()
     {
         GetInput();
@@ -86,7 +90,7 @@ public class BowmanController : MonoBehaviour
             arrowInPlace = false;
             pullDistance = 0;
 
-            arrowHeld = primaryTriggerValue > 0 && quiverBounds.GetTotalBounds(true).Contains(rightHandControllerPosition);
+            arrowHeld = primaryTriggerValue > 0 && quiverBounds.IsPointInside(rightHandControllerPosition);
         }
 
         bow.SetPullPercent(pullDistance / bow.maxPullDistance);

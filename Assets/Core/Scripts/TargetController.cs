@@ -30,6 +30,7 @@ public class TargetController : MonoBehaviour
                     scoresPool.Get<FlyingScoreController>(score =>
                     {
                         score.transform.position = transform.position;
+                        score.transform.forward = -transform.forward;
                         score.scoreLabel.text = arrow.scoreTarget.score.ToString();
                         StartCoroutine(CommonRoutines.WaitToDoAction(success => { scoresPool.Return(score.transform); }, score.ttl));
                     });

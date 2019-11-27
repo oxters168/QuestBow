@@ -111,6 +111,9 @@ Assets/Imported Assets/Mixamo/*
 Assets/Imported Assets/Wristwatch/*
 !Assets/Imported Assets/Wristwatch/.gitkeep
 
+Assets/Core/Combined Models/*
+!Assets/Core/Combined Models/.gitkeep
+
 #Puppet Master
 Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/*
 !Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/.gitkeep
