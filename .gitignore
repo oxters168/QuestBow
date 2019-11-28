@@ -117,6 +117,16 @@ Assets/Core/Combined Models/*
 Assets/Imported Assets/LowPolyWaterv2/*
 !Assets/Imported Assets/LowPolyWaterv2/.gitkeep
 
+#Doozy didn't let me put it in imported assets
+Assets/Doozy/*
+!Assets/Doozy/.gitkeep
+
+#Doozy extras
+Assets/Imported Assets/Demigiant/*
+Assets/Imported Assets/Demigiant.meta
+Assets/Imported Assets/Gizmos/*
+Assets/Imported Assets/Gizmos.meta
+
 #Puppet Master
 Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/*
 !Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/.gitkeep

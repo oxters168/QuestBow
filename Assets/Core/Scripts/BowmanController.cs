@@ -3,19 +3,18 @@ using UnityHelpers;
 
 public class BowmanController : MonoBehaviour
 {
-    public MimicTransform arrowPlaceholder;
+    public Transform bowTransform, arrowTransform;
+    //public MimicTransform arrowPlaceholder;
     public Transform quiverBounds;
     public BowController bow;
     public OrbitCameraController arrowCamera;
     private bool arrowHeld, arrowInPlace;
     public float pullDistance;
 
-    public Transform controllersParent;
-    public Vector3 rightHandControllerPosition;
-    public float primaryTriggerValue, secondaryGripValue;
-    public Vector2 secondaryStickValue;
-    //public bool secondaryLowerButton, secondaryHigherButton;
-    public OVRInput.Handedness dominantHand = OVRInput.Handedness.RightHanded;
+    public Vector3 arrowHandPosition, bowHandPosition;
+    public Quaternion arrowHandRotation, bowHandRotation;
+    public bool holdArrow;
+    public Vector2 watchAxes;
 
     private void Start()
     {
@@ -23,63 +22,55 @@ public class BowmanController : MonoBehaviour
     }
     private void Update()
     {
-        GetInput();
-
-        if (arrowHeld && arrowInPlace && primaryTriggerValue <= 0)
+        if (arrowHeld && arrowInPlace && !holdArrow)
             bow.FireArrow();
 
+        bowTransform.position = bowHandPosition;
+        bowTransform.rotation = bowHandRotation;
         UpdatePlaceholderArrow();
         ArrowCameraControls();
 
-        DebugPanel.Log("RH Position", rightHandControllerPosition);
-        DebugPanel.Log("Primary Trigger", primaryTriggerValue);
+        DebugPanel.Log("RH Position", arrowHandPosition);
+        DebugPanel.Log("Primary Trigger", holdArrow);
         DebugPanel.Log("Arrow Held", arrowHeld);
         DebugPanel.Log("Arrow In Place", arrowInPlace);
         DebugPanel.Log("Pull Distance", pullDistance);
     }
 
-    private void GetInput()
-    {
-        primaryTriggerValue = OVRInput.Get(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.RawAxis1D.RIndexTrigger : OVRInput.RawAxis1D.LIndexTrigger, OVRInput.Controller.All);
-        secondaryGripValue = OVRInput.Get(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.RawAxis1D.LHandTrigger : OVRInput.RawAxis1D.RHandTrigger, OVRInput.Controller.All);
-
-        secondaryStickValue = OVRInput.Get(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.RawAxis2D.LThumbstick : OVRInput.RawAxis2D.RThumbstick, OVRInput.Controller.All);
-        //secondaryLowerButton = OVRInput.Get(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.RawButton.X : OVRInput.RawButton.A, OVRInput.Controller.All);
-        //secondaryHigherButton = OVRInput.Get(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.RawButton.Y : OVRInput.RawButton.B, OVRInput.Controller.All);
-
-        rightHandControllerPosition = controllersParent.TransformPoint(OVRInput.GetLocalControllerPosition(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.Controller.RTouch : OVRInput.Controller.LTouch));
-        //controllerRotation = controllersParent.rotation * OVRInput.GetLocalControllerRotation(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch);
-    }
-
     private void ArrowCameraControls()
     {
-        arrowCamera.SetLookHorizontal(secondaryStickValue.x);
-        arrowCamera.SetPush(secondaryStickValue.y);
+        arrowCamera.SetLookHorizontal(watchAxes.x);
+        arrowCamera.SetPush(watchAxes.y);
         //arrowCamera.SetPush(secondaryLowerButton ? -1 : (secondaryHigherButton ? 1 : 0));
     }
     private void UpdatePlaceholderArrow()
     {
-        if (primaryTriggerValue <= 0)
+        if (!holdArrow)
             arrowHeld = false;
 
-        arrowPlaceholder.enabled = pullDistance <= 0;
-        arrowPlaceholder.gameObject.SetActive(arrowHeld);
+        //arrowPlaceholder.enabled = pullDistance <= 0;
+        arrowTransform.gameObject.SetActive(arrowHeld);
 
         if (arrowHeld)
         {
-            if (bow.AtArrowPosition(arrowPlaceholder.transform.position))
+            if (bow.AtArrowPosition(arrowHandPosition))
                 arrowInPlace = true;
             Vector3 alignedPosition = Vector3.zero;
             pullDistance = 0;
             if (arrowInPlace)
             {
-                pullDistance = bow.PullAmount(rightHandControllerPosition);
+                pullDistance = bow.PullAmount(arrowHandPosition);
                 if (pullDistance > 0)
                 {
                     alignedPosition = bow.arrowPlacement.position - bow.arrowPlacement.forward * pullDistance;
-                    arrowPlaceholder.transform.position = alignedPosition;
-                    arrowPlaceholder.transform.forward = bow.transform.forward;
+                    arrowTransform.position = alignedPosition;
+                    arrowTransform.forward = bow.transform.forward;
                 }
+            }
+            else
+            {
+                arrowTransform.position = arrowHandPosition;
+                arrowTransform.rotation = arrowHandRotation;
             }
 
             if (pullDistance <= 0)
@@ -90,7 +81,7 @@ public class BowmanController : MonoBehaviour
             arrowInPlace = false;
             pullDistance = 0;
 
-            arrowHeld = primaryTriggerValue > 0 && quiverBounds.IsPointInside(rightHandControllerPosition);
+            arrowHeld = holdArrow && quiverBounds.IsPointInside(arrowHandPosition);
         }
 
         bow.SetPullPercent(pullDistance / bow.maxPullDistance);
