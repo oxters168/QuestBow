@@ -114,6 +114,9 @@ Assets/Imported Assets/Wristwatch/*
 Assets/Core/Combined Models/*
 !Assets/Core/Combined Models/.gitkeep
 
+Assets/Imported Assets/LowPolyWaterv2/*
+!Assets/Imported Assets/LowPolyWaterv2/.gitkeep
+
 #Puppet Master
 Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/*
 !Assets/Imported Assets/Plugins/RootMotion/PuppetMaster/.gitkeep
