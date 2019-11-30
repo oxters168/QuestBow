@@ -4,12 +4,12 @@ public class LaserUIHelper : MonoBehaviour
 {
     public LaserPointer laserPointer;
     public LaserPointer.LaserBeamBehavior laserBeamBehavior;
-    public GameObject canvas;
 
     void Start()
     {
+        Debug.Log("Starting LaserUIHelper");
         laserPointer.laserBeamBehavior = laserBeamBehavior;
-        OVRRaycaster[] ovrRaycasters = canvas.GetComponentsInChildren<OVRRaycaster>(true);
+        OVRRaycaster[] ovrRaycasters = FindObjectsOfType<OVRRaycaster>();
         foreach (var ovrRaycaster in ovrRaycasters)
             ovrRaycaster.pointer = laserPointer.gameObject;
     }

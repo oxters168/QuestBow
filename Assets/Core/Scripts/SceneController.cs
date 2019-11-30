@@ -2,26 +2,29 @@
 
 public class SceneController : MonoBehaviour
 {
-    private AsyncOperation sceneLoadOperation;
-    public UnityEngine.UI.Image progressBar;
+    public static SceneController sceneControllerInScene { get; private set; }
+    public static bool menuShown { get { return sceneControllerInScene.gameObject.activeSelf; } }
+    public bool showMenuOnAwake;
 
-    private void Update()
+    public GameObject[] scenes;
+
+    private void Awake()
     {
-        if (sceneLoadOperation != null)
-        {
-            progressBar.fillAmount = sceneLoadOperation.progress;
-        }
+        sceneControllerInScene = this;
+        ShowMenu(showMenuOnAwake);
     }
 
-    public void LoadScene(int sceneIndex)
+    public static void ShowMenu(bool onOff)
     {
-        sceneLoadOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex, UnityEngine.SceneManagement.LoadSceneMode.Single);
-        sceneLoadOperation.completed += SceneLoadOperation_completed;
+        sceneControllerInScene.gameObject.SetActive(onOff);
     }
-
-    private void SceneLoadOperation_completed(AsyncOperation obj)
+    public static void ShowSceneStatic(int sceneIndex)
     {
-        gameObject.SetActive(false);
-        sceneLoadOperation.completed -= SceneLoadOperation_completed;
+        for (int i = 0; i < sceneControllerInScene.scenes.Length; i++)
+            sceneControllerInScene.scenes[i].SetActive(i == sceneIndex);
+    }
+    public void ShowScene(int sceneIndex)
+    {
+        ShowSceneStatic(sceneIndex);
     }
 }

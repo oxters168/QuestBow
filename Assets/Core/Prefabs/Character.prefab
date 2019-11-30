@@ -6287,10 +6287,10 @@ MonoBehaviour:
     activateOnImpulse: 0
   groundLayers:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 16400
   collisionLayers:
     serializedVersion: 2
-    m_Bits: 515
+    m_Bits: 16899
   collisionThreshold: 0
   collisionResistance:
     mode: 0

@@ -102,6 +102,9 @@ Assets/Imported Assets/PolygonSamurai/*
 Assets/Imported Assets/PolygonWestern/*
 !Assets/Imported Assets/PolygonWestern/.gitkeep
 
+Assets/Imported Assets/PolygonPrototype/*
+!Assets/Imported Assets/PolygonPrototype/.gitkeep
+
 Assets/Imported Assets/MeshCombineStudio/*
 !Assets/Imported Assets/MeshCombineStudio/.gitkeep
 
