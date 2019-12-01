@@ -6,6 +6,8 @@ public class OculusInputController : MonoBehaviour
 
     public Transform controllersParent;
 
+    public bool canAccessGameModeMenu { get; private set; }
+
     public bool backButtonValue, backButtonProcessed;
     public Vector3 dominantHandPosition, secondaryHandPosition;
     public Quaternion dominantHandRotation, secondaryHandRotation;
@@ -21,7 +23,8 @@ public class OculusInputController : MonoBehaviour
         if (backButtonValue && !backButtonProcessed)
         {
             //ondown
-            SceneController.ShowMenu(!SceneController.menuShown);
+            if (canAccessGameModeMenu)
+                SceneController.ShowGameModeMenu(!SceneController.menuShown);
             backButtonProcessed = true;
         }
         else if (!backButtonValue && backButtonProcessed)
@@ -29,6 +32,12 @@ public class OculusInputController : MonoBehaviour
             //onup
             backButtonProcessed = false;
         }
+    }
+
+    public void SetMenuAccess(bool onOff)
+    {
+        canAccessGameModeMenu = onOff;
+        //SceneController.ShowGameModeMenu(canAccessGameModeMenu);
     }
 
     private void GetInput()
