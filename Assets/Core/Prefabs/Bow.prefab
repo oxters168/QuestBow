@@ -28,11 +28,10 @@ Transform:
   m_LocalScale: {x: 0.6780219, y: 0.6780219, z: 0.6780219}
   m_Children:
   - {fileID: 1010261364222497306}
-  - {fileID: 5081530324705732312}
   - {fileID: 6093939393044405317}
   - {fileID: 5614100065183131765}
   m_Father: {fileID: 144057891285319171}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &92342329100016078
 GameObject:
@@ -95,7 +94,7 @@ Transform:
   - {fileID: 3904642705331342016}
   - {fileID: 6977587252817887068}
   m_Father: {fileID: 144057891285319171}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603705205941177369
 GameObject:
@@ -294,7 +293,7 @@ Transform:
   m_Children:
   - {fileID: 8301851408284793353}
   m_Father: {fileID: 91664805842928866}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4203027758426565646
 GameObject:
@@ -661,7 +660,7 @@ Transform:
   m_Children:
   - {fileID: 5594539858103991005}
   m_Father: {fileID: 91664805842928866}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6898961193367099512
 GameObject:
@@ -784,6 +783,7 @@ Transform:
   m_Children:
   - {fileID: 7592719822534553213}
   - {fileID: 91664805525452338}
+  - {fileID: 5081530324705732312}
   - {fileID: 91664805842928866}
   - {fileID: 4788761562475240878}
   m_Father: {fileID: 0}
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41eb8efde3183034893c69b1e736fead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 9174925508759913317, guid: aeddf94cf06cc2a41b9379420989840e,
+  arrowPrefab: {fileID: 9174925508759913317, guid: 776a8cc4b0e0f004cb9f1b4a368ee297,
     type: 3}
   arrowsPool:
   - {fileID: 0}
@@ -813,11 +813,16 @@ MonoBehaviour:
   arrowFireSpot: {fileID: 5081530324705732312}
   minArrowDistanceSqr: 0.01
   maxPullDistance: 0.7
-  maxLaunchSpeed: 200
+  maxLaunchSpeed: 70
   stringMinStretch: 1
   stringMaxStretch: 1.675
   topString: {fileID: 6093939393044405317}
   bottomString: {fileID: 5614100065183131765}
+  onArrowSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityHelpers.PoolSpawner+SpawnEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &8746938502769964297
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,10 +846,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8746938502769964297}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.084800005, z: 0.6895219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 91664805842928866}
-  m_RootOrder: 1
+  m_Father: {fileID: 144057891285319171}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

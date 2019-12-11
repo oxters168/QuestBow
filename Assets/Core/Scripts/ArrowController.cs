@@ -11,9 +11,6 @@ public class ArrowController : MonoBehaviour
     public float minimumPenetrationAngle = 30;
     public float maxHurtValue = 20;
 
-    [Range(0, float.MaxValue)]
-    public float upCorrectionMaxTorque = 1;
-
     public TargetController.ScoreColliderData scoreTarget { get; internal set; }
 
     public Vector3 previousVelocity { get; private set; }
@@ -30,14 +27,6 @@ public class ArrowController : MonoBehaviour
         {
             previousVelocity = mainBody.velocity;
             previousForward = mainBody.transform.forward;
-
-            if (upCorrectionMaxTorque > 0)
-            {
-                //Need to fix this to rotate in the correct direction, for now it always goes one way
-                float dotAngle = Vector3.Dot(previousVelocity.normalized, previousForward);
-                dotAngle = Mathf.Abs(Mathf.Clamp(dotAngle, -1, 0));
-                mainBody.AddTorque(mainBody.transform.right * dotAngle * upCorrectionMaxTorque);
-            }
         }
     }
 
@@ -79,7 +68,8 @@ public class ArrowController : MonoBehaviour
     {
         Destroy(joint);
         Destroy(mainBody);
-        Destroy(tipBody);
+        if (tipBody)
+            Destroy(tipBody);
         //mainBody.isKinematic = onOff;
         //tipBody.isKinematic = onOff;
 
@@ -105,7 +95,10 @@ public class ArrowController : MonoBehaviour
     {
         mainBody.velocity = Vector3.zero;
         mainBody.angularVelocity = Vector3.zero;
-        tipBody.velocity = Vector3.zero;
-        tipBody.angularVelocity = Vector3.zero;
+        if (tipBody)
+        {
+            tipBody.velocity = Vector3.zero;
+            tipBody.angularVelocity = Vector3.zero;
+        }
     }
 }

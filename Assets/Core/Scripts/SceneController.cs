@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour
 
     private int currentScene;
     public WorldData[] scenes;
+    public GameObject[] hiddenInMenu;
     public GameObject[] hiddenInGame;
     public BowmanController bowman;
 
@@ -42,6 +43,8 @@ public class SceneController : MonoBehaviour
         bool inGame = GetCurrentGameMode() != WorldData.GameType.none;
         bool inGameLocation = sceneControllerInScene.currentScene != 0;
 
+        foreach (var hidden in sceneControllerInScene.hiddenInMenu)
+            hidden.SetActive(inGame);
         foreach (var hidden in sceneControllerInScene.hiddenInGame)
             hidden.SetActive(!inGame);
 
