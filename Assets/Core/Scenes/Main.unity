@@ -3521,6 +3521,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1457696454}
+    - target: {fileID: 1923661970311162534, guid: 6259aa30f100ee04badd7cc2d151a326,
+        type: 3}
+      propertyPath: gameModes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6259aa30f100ee04badd7cc2d151a326, type: 3}
 --- !u!114 &164719183 stripped
@@ -36391,9 +36396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63f7e106b8a59a4c8774b697c0de58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
-  birdSpawns: []
-  enemySpawns: []
+  gameModes: []
 --- !u!1 &1556282604
 GameObject:
   m_ObjectHideFlags: 0
