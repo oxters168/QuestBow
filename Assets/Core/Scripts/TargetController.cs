@@ -18,9 +18,11 @@ public class TargetController : MonoBehaviour
         {
             var arrow = colInfo.collidedWith.GetComponentInParent<ArrowController>();
 
-            if (arrow != null && arrow.GetStuckTarget().root == transform)
+            if (arrow != null)
             {
-                arrow.scoreTarget = GetScore(arrow.GetTipPosition());
+                var contactPoint = colInfo.collision.GetContact(0);
+                arrow.scoreTarget = GetScore(contactPoint.point);
+                //arrow.scoreTarget = GetScore(arrow.GetTipPosition());
 
                 if (arrow.scoreTarget != null)
                 {
@@ -47,9 +49,7 @@ public class TargetController : MonoBehaviour
         for (int i = 0; i < targetScores.Length; i++)
         {
             if (targetScores[i].col.transform.IsPointInside(position))
-            {
                 scoreColliderData = targetScores[i];
-            }
         }
         return scoreColliderData;
     }

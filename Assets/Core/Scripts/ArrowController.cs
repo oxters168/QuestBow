@@ -36,7 +36,7 @@ public class ArrowController : MonoBehaviour
     }
     private void OnCollided(TreeCollider.CollisionInfo colInfo)
     {
-        if (!colInfo.isTrigger && colInfo.collisionState == TreeCollider.CollisionInfo.CollisionState.enter && !colInfo.collidedWith.tag.Equals("Arrow"))
+        if (!colInfo.isTrigger && colInfo.collisionState == TreeCollider.CollisionInfo.CollisionState.enter)
         {
             HealthController hitHealth = colInfo.collidedWith.GetComponentInParent<HealthController>();
             if (hitHealth != null)
@@ -61,15 +61,23 @@ public class ArrowController : MonoBehaviour
     }
     public Vector3 GetTipPosition()
     {
-        float arrowLength = renderingRoot.GetTotalBounds(false, false).size.z;
+        float arrowLength = renderingRoot.GetTotalBounds(LayerMask.GetMask("Arrow")).size.z;
         return transform.position + transform.forward * arrowLength;
     }
     private void SetStuck(Vector3 position, Vector3 forward, Transform parent)
     {
-        Destroy(joint);
-        Destroy(mainBody);
+        if (mainBody)
+            Destroy(mainBody);
+        else
+            Debug.LogWarning("ArrowController: Tried to destroy mainBody, but it doesn't exist");
+        if (joint)
+            Destroy(joint);
+        else
+            Debug.LogWarning("ArrowController: Tried to destroy joint, but it doesn't exist");
         if (tipBody)
             Destroy(tipBody);
+        else
+            Debug.LogWarning("ArrowController: Tried to destroy tipBody, but it doesn't exist");
         //mainBody.isKinematic = onOff;
         //tipBody.isKinematic = onOff;
 
