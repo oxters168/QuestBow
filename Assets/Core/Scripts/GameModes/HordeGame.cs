@@ -3,15 +3,32 @@
 public class HordeGame : GenericGame
 {
     public GameObject[] enemySpawns;
+    private bool inGame;
 
     public override void EndGame()
     {
         SetEnemiesActive(false);
+        inGame = false;
     }
 
-    public override void StartGame()
+    public override void StartGame(int level)
     {
         SetEnemiesActive(true);
+        inGame = true;
+    }
+
+    public override bool IsPlaying()
+    {
+        return inGame;
+    }
+
+    public override int GetArrowsLeft()
+    {
+        return 1;
+    }
+    public override int GetScore()
+    {
+        return 0;
     }
 
     private void SetEnemiesActive(bool onOff)

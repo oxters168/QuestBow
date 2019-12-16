@@ -11,10 +11,16 @@ public class BowmanController : MonoBehaviour
     private bool arrowHeld, arrowInPlace;
     public float pullDistance;
 
+    public bool canShoot;
+    public event ArrowShotHandler onArrowShot;
+    public delegate void ArrowShotHandler();
+
     public Vector3 arrowHandPosition, bowHandPosition;
     public Quaternion arrowHandRotation, bowHandRotation;
     public bool holdArrow;
     public Vector2 watchAxes;
+
+    public int totalArrowsFired { get; private set; }
 
     private void Start()
     {
@@ -22,8 +28,12 @@ public class BowmanController : MonoBehaviour
     }
     private void Update()
     {
-        if (arrowHeld && arrowInPlace && !holdArrow)
+        if (arrowHeld && arrowInPlace && !holdArrow && canShoot)
+        {
+            totalArrowsFired++;
             bow.FireArrow();
+            onArrowShot?.Invoke();
+        }
 
         bowTransform.position = bowHandPosition;
         bowTransform.rotation = bowHandRotation;
@@ -49,7 +59,7 @@ public class BowmanController : MonoBehaviour
             arrowHeld = false;
 
         //arrowPlaceholder.enabled = pullDistance <= 0;
-        arrowTransform.gameObject.SetActive(arrowHeld);
+        arrowTransform.gameObject.SetActive(arrowHeld && canShoot);
 
         if (arrowHeld)
         {

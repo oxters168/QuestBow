@@ -10341,8 +10341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2877d54af4ada744dbfd8950e4ba0ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 3164225800047621538}
+  practiceTarget: {fileID: 3164225800047621538}
 --- !u!1 &9098237820987691118
 GameObject:
   m_ObjectHideFlags: 0

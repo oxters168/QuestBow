@@ -6,6 +6,7 @@ public class SceneController : MonoBehaviour
     public static bool menuShown { get { return sceneControllerInScene.gameModeMenu.activeSelf; } }
     public GameObject gameModeMenu, locationMenu;
     public OculusInputController mainInput;
+    public HUDController hud;
 
     private int currentScene;
     public WorldData[] scenes;
@@ -18,6 +19,27 @@ public class SceneController : MonoBehaviour
         sceneControllerInScene = this;
         ShowGameModeMenu(false);
         ShowLocationMenu(true);
+    }
+    private void Update()
+    {
+        UpdateHUD();
+    }
+
+    private void UpdateHUD()
+    {
+        hud.arrowsLeft = scenes[currentScene].GetArrowsLeft();
+        hud.score = scenes[currentScene].GetScore();
+    }
+
+    public void SetTargetGamePracticeDistance(float meters)
+    {
+        foreach (var scene in scenes)
+            scene.SetTargetGamePracticeDistance(meters);
+    }
+    public void SetTargetGamePracticeHeight(float meters)
+    {
+        foreach (var scene in scenes)
+            scene.SetTargetGamePracticeHeight(meters);
     }
 
     public static void SetGameModeStatic(WorldData.GameType gameMode)
