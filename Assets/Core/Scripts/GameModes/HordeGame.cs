@@ -15,6 +15,8 @@ public class HordeGame : GenericGame
     {
         SetEnemiesActive(true);
         inGame = true;
+
+        SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
 
     public override bool IsPlaying()

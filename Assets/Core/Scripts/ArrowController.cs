@@ -38,16 +38,27 @@ public class ArrowController : MonoBehaviour
     {
         if (!colInfo.isTrigger && colInfo.collisionState == TreeCollider.CollisionInfo.CollisionState.enter)
         {
+            #region Health
             HealthController hitHealth = colInfo.collidedWith.GetComponentInParent<HealthController>();
             if (hitHealth != null)
             {
                 //Need to calculate hurt value
                 hitHealth.HurtValue(maxHurtValue);
             }
+            #endregion
+            #region Physics
             Rigidbody hitBody = colInfo.collidedWith.GetComponentInParent<Rigidbody>();
             if (hitBody != null)
                 hitBody.AddForce(previousVelocity, ForceMode.Impulse);
-
+            #endregion
+            #region Score
+            ArrowController otherArrow = colInfo.collidedWith.GetComponentInParent<ArrowController>();
+            if (otherArrow != null)
+            {
+                scoreTarget = otherArrow.scoreTarget;
+            }
+            #endregion
+            #region Penetration
             float penetrationAngle = Vector3.Angle(previousForward, previousVelocity.normalized);
             DebugPanel.Log(name + " puncture angle", penetrationAngle, 5);
             if (penetrationAngle <= minimumPenetrationAngle)
@@ -57,6 +68,7 @@ public class ArrowController : MonoBehaviour
                 Debug.DrawRay(contactPoint.point, -punctureDirection, Color.red, 1000);
                 SetStuck(contactPoint.point, punctureDirection, colInfo.collidedWith.transform);
             }
+            #endregion
         }
     }
     public Vector3 GetTipPosition()
@@ -88,6 +100,13 @@ public class ArrowController : MonoBehaviour
         transform.forward = forward;
         //if (parent == null)
         //    transform.localScale = Vector3.one;
+    }
+
+    public static void DestroyArrowsInObject(Transform root)
+    {
+        var arrowsInObject = root.GetComponentsInChildren<ArrowController>();
+        for (int i = 0; i < arrowsInObject.Length; i++)
+            Destroy(arrowsInObject[i].gameObject);
     }
 
     public void Translate(Vector3 position, Quaternion rotation, Vector3 velocity)

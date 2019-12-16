@@ -64,6 +64,13 @@ public class BowController : MonoBehaviour
 
         return Mathf.Clamp(distance, 0, maxPullDistance);
     }
+
+    public void DestroyAllArrows()
+    {
+        for (int i = 0; i < arrowsPool.Length; i++)
+            if (arrowsPool[i] != null)
+                Destroy(arrowsPool[i].gameObject);
+    }
     public void FireArrow()
     {
         GetArrow((arrow) =>

@@ -15,6 +15,8 @@ public class BirdsGame : GenericGame
     {
         SetBirdsActive(true);
         inGame = true;
+
+        SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
 
     public override bool IsPlaying()

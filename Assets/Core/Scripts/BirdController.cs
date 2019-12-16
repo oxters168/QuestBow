@@ -31,9 +31,11 @@ public class BirdController : MonoBehaviour
     }
     public void Revive()
     {
+        ArrowController.DestroyArrowsInObject(transform);
         isDead = false;
         birdBody.isKinematic = true;
     }
+
     public void SetRandomSkin()
     {
         SetSkin(Random.Range(0, birdSkins.Length));

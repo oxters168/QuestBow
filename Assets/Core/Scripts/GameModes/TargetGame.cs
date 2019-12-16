@@ -36,6 +36,7 @@ public class TargetGame : GenericGame
     public override void EndGame()
     {
         SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;
+        SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
 
         SetTargetsActive(false);
         inGame = false;
@@ -46,10 +47,12 @@ public class TargetGame : GenericGame
         totalScore = 0;
         startArrowsFiredCount = SceneController.sceneControllerInScene.bowman.totalArrowsFired;
         SceneController.sceneControllerInScene.bowman.onArrowShot += Bowman_onArrowShot;
-        SceneController.sceneControllerInScene.bowman.canShoot = true;
+        SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
 
         SetTargetsActive(true);
         inGame = true;
+
+        SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
 
     public override int GetArrowsLeft()

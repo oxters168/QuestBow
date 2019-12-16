@@ -32,6 +32,7 @@ public class SpawnFunctionsController : MonoBehaviour
         float diedAt = -1;
         StartCoroutine(CommonRoutines.WaitToDoAction(success =>
         {
+            ArrowController.DestroyArrowsInObject(enemy.transform);
             enemiesPool.Return(enemy.transform);
         }, 0, () =>
         {

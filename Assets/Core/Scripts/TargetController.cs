@@ -24,7 +24,9 @@ public class TargetController : MonoBehaviour
             if (arrow != null)
             {
                 var contactPoint = colInfo.collision.GetContact(0);
-                arrow.scoreTarget = GetScore(contactPoint.point);
+                var scoreTarget = GetScore(contactPoint.point);
+                if (scoreTarget != null)
+                    arrow.scoreTarget = scoreTarget;
                 //arrow.scoreTarget = GetScore(arrow.GetTipPosition());
 
                 if (arrow.scoreTarget != null && arrow.GetStuckTarget().GetComponentInParent<TargetController>() == this)

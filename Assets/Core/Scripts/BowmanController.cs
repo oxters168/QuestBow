@@ -47,6 +47,11 @@ public class BowmanController : MonoBehaviour
         DebugPanel.Log("Pull Distance", pullDistance);
     }
 
+    public void DestroyAllArrows()
+    {
+        bow.DestroyAllArrows();
+    }
+
     private void ArrowCameraControls()
     {
         arrowCamera.SetLookHorizontal(watchAxes.x);
