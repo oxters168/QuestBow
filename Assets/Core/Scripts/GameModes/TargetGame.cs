@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
-using UnityHelpers;
 
 public class TargetGame : GenericGame
 {
+    private readonly int[] availableArrows = new int[] { -1, 6 };
     public TargetController practiceTarget;
+    public TargetController olympicTarget;
+    private int chosenLevel;
     private bool inGame;
     public int totalScore { get; private set; }
     private int startArrowsFiredCount;
@@ -11,6 +13,7 @@ public class TargetGame : GenericGame
     private void Start()
     {
         practiceTarget.onArrowHit += Target_onArrowHit;
+        olympicTarget.onArrowHit += Target_onArrowHit;
     }
 
     private void Target_onArrowHit(TargetController caller, ArrowController arrow)
@@ -20,7 +23,16 @@ public class TargetGame : GenericGame
 
     private void SetTargetsActive(bool onOff)
     {
-        practiceTarget.gameObject.SetActive(onOff);
+        practiceTarget.gameObject.SetActive(false);
+        olympicTarget.gameObject.SetActive(false);
+
+        if (onOff)
+        {
+            if (chosenLevel == 0)
+                practiceTarget.gameObject.SetActive(true);
+            else if (chosenLevel == 1)
+                olympicTarget.gameObject.SetActive(true);
+        }
     }
 
     public void SetPracticeDistance(float meters)
@@ -33,15 +45,6 @@ public class TargetGame : GenericGame
         practiceTarget.transform.position = new Vector3(practiceTarget.transform.position.x, meters, practiceTarget.transform.position.z);
     }
 
-    public override void EndGame()
-    {
-        SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;
-        SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
-
-        SetTargetsActive(false);
-        inGame = false;
-    }
-
     public override void StartGame(int level)
     {
         totalScore = 0;
@@ -49,15 +52,38 @@ public class TargetGame : GenericGame
         SceneController.sceneControllerInScene.bowman.onArrowShot += Bowman_onArrowShot;
         SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
 
+        chosenLevel = level;
         SetTargetsActive(true);
         inGame = true;
 
         SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
+    public override void EndGame()
+    {
+        chosenLevel = -1;
 
+        SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;
+        SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
+
+        SetTargetsActive(false);
+        inGame = false;
+    }
+    public override int GetLevelArrowCount()
+    {
+        int arrowCount = 0;
+        if (chosenLevel >= 0)
+            arrowCount = availableArrows[chosenLevel];
+        return arrowCount;
+    }
     public override int GetArrowsLeft()
     {
-        return 5 - (SceneController.sceneControllerInScene.bowman.totalArrowsFired - startArrowsFiredCount);
+        int arrowsLeft = GetLevelArrowCount();
+        if (arrowsLeft >= 0)
+            arrowsLeft -= SceneController.sceneControllerInScene.bowman.totalArrowsFired - startArrowsFiredCount;
+        else
+            arrowsLeft = int.MaxValue;
+
+        return arrowsLeft;
     }
     public override int GetScore()
     {
@@ -66,7 +92,7 @@ public class TargetGame : GenericGame
 
     private void Bowman_onArrowShot()
     {
-        if (GetArrowsLeft() <= 0)
+        if (inGame && GetArrowsLeft() <= 0)
             SceneController.sceneControllerInScene.bowman.canShoot = false;
     }
 

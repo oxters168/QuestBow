@@ -42,18 +42,22 @@ public class SceneController : MonoBehaviour
             scene.SetTargetGamePracticeHeight(meters);
     }
 
-    public static void SetGameModeStatic(WorldData.GameType gameMode)
+    public void PlayTargets(int level)
     {
-        sceneControllerInScene.scenes[sceneControllerInScene.currentScene].SetGameMode(gameMode);
+        SetGameModeStatic(WorldData.GameType.targets, level);
+    }
+    public void PlayBirds(int level)
+    {
+        SetGameModeStatic(WorldData.GameType.birds, level);
+    }
+    public void PlayHorde(int level)
+    {
+        SetGameModeStatic(WorldData.GameType.horde, level);
+    }
+    public static void SetGameModeStatic(WorldData.GameType gameMode, int level)
+    {
+        sceneControllerInScene.scenes[sceneControllerInScene.currentScene].SetGameMode(gameMode, level);
         ApplyModeChange();
-    }
-    public void SetGameMode(WorldData.GameType gameMode)
-    {
-        SetGameModeStatic(gameMode);
-    }
-    public void SetGameMode(int gameMode)
-    {
-        SetGameModeStatic((WorldData.GameType)gameMode);
     }
     public static WorldData.GameType GetCurrentGameMode()
     {
@@ -90,7 +94,7 @@ public class SceneController : MonoBehaviour
         for (int i = 0; i < sceneControllerInScene.scenes.Length; i++)
             sceneControllerInScene.scenes[i].gameObject.SetActive(i == sceneControllerInScene.currentScene);
 
-        SetGameModeStatic(WorldData.GameType.none);
+        SetGameModeStatic(WorldData.GameType.none, 0);
     }
     public void ShowScene(int sceneIndex)
     {

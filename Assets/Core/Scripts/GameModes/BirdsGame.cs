@@ -10,7 +10,6 @@ public class BirdsGame : GenericGame
         SetBirdsActive(false);
         inGame = false;
     }
-
     public override void StartGame(int level)
     {
         SetBirdsActive(true);
@@ -18,15 +17,17 @@ public class BirdsGame : GenericGame
 
         SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
-
     public override bool IsPlaying()
     {
         return inGame;
     }
-
-    public override int GetArrowsLeft()
+    public override int GetLevelArrowCount()
     {
         return 1;
+    }
+    public override int GetArrowsLeft()
+    {
+        return GetLevelArrowCount();
     }
     public override int GetScore()
     {

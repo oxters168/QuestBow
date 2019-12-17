@@ -10,7 +10,7 @@ public class HUDController : MonoBehaviour
 
     void Update()
     {
-        arrowsLeftLabel.text = arrowsLeft.ToString();
+        arrowsLeftLabel.text = arrowsLeft < int.MaxValue ? arrowsLeft.ToString() : "∞";
         scoreLabel.text = score.ToString();
     }
 }
