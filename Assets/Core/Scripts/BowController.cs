@@ -7,6 +7,10 @@ public class BowController : MonoBehaviour
     public ArrowController[] arrowsPool = new ArrowController[5];
     private int arrowPoolIndex;
 
+    public LineRenderer prediction;
+    public float trajectoryTimestep = 0.2f;
+    public float trajectoryTime = 5f;
+
     public Transform arrowPlacement;
     public Transform arrowFireSpot;
     public float minArrowDistanceSqr = 0.01f;
@@ -23,6 +27,8 @@ public class BowController : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(transform.position, transform.right, Color.blue);
+
+        DrawPrediction();
     }
     private void OnDrawGizmosSelected()
     {
@@ -30,6 +36,27 @@ public class BowController : MonoBehaviour
         Gizmos.DrawSphere(arrowPlacement.position, minArrowDistanceSqr * minArrowDistanceSqr);
     }
 
+    private void DrawPrediction()
+    {
+        prediction.gameObject.SetActive(pullPercent > 0);
+
+        if (pullPercent > 0)
+        {
+            int timesteps = Mathf.RoundToInt(trajectoryTime / trajectoryTimestep);
+            prediction.positionCount = timesteps;
+            Vector3[] trajectory = new Vector3[timesteps];
+            Vector3 currentVelocity = pullPercent * maxLaunchSpeed * arrowFireSpot.forward;
+            Vector3 currentPosition = arrowFireSpot.position;
+            Vector3 nextPosition;
+            trajectory[0] = currentPosition;
+            for (int i = 1; i < timesteps; i++)
+            {
+                nextPosition = PhysicsHelpers.PredictPosition(currentPosition, currentVelocity, 0.05f, trajectoryTimestep * i);
+                trajectory[i] = nextPosition;
+            }
+            prediction.SetPositions(trajectory);
+        }
+    }
     public void SetPullPercent(float percent)
     {
         pullPercent = Mathf.Clamp01(percent);
