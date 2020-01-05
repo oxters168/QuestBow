@@ -120,6 +120,9 @@ Assets/Core/Combined Models/*
 Assets/Imported Assets/LowPolyWaterv2/*
 !Assets/Imported Assets/LowPolyWaterv2/.gitkeep
 
+Assets/AkilliMum/*
+!Assets/AkilliMum/.gitkeep
+
 #Doozy didn't let me put it in imported assets
 Assets/Doozy/*
 !Assets/Doozy/.gitkeep

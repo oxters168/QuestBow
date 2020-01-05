@@ -15,7 +15,10 @@ public class BowmanController : MonoBehaviour
     public event ArrowShotHandler onArrowShot;
     public delegate void ArrowShotHandler();
 
-    public Vector3 arrowHandPosition, bowHandPosition;
+    public OculusInputController vrInput;
+
+    public Transform bodyOrientation;
+    public Vector3 arrowHandPosition, bowHandPosition, headPosition, headForward;
     public Quaternion arrowHandRotation, bowHandRotation;
     public bool holdArrow;
     public Vector2 watchAxes;
@@ -28,6 +31,9 @@ public class BowmanController : MonoBehaviour
     }
     private void Update()
     {
+        RetrieveVRInput();
+        CalculateBodyOrientation();
+
         if (arrowHeld && arrowInPlace && !holdArrow && canShoot)
         {
             totalArrowsFired++;
@@ -45,6 +51,30 @@ public class BowmanController : MonoBehaviour
         DebugPanel.Log("Arrow Held", arrowHeld);
         DebugPanel.Log("Arrow In Place", arrowInPlace);
         DebugPanel.Log("Pull Distance", pullDistance);
+    }
+
+    private void RetrieveVRInput()
+    {
+        if (vrInput != null)
+        {
+            headPosition = vrInput.thirdEyeTransform.position;
+            headForward = vrInput.thirdEyeTransform.forward;
+            arrowHandPosition = vrInput.dominantHandPosition;
+            arrowHandRotation = vrInput.dominantHandRotation;
+            bowHandPosition = vrInput.secondaryHandPosition;
+            bowHandRotation = vrInput.secondaryHandRotation;
+            holdArrow = vrInput.primaryTriggerValue > 0;
+            watchAxes = vrInput.secondaryStickValue;
+        }
+    }
+
+    private void CalculateBodyOrientation()
+    {
+        Vector3 calculatedForward = headForward.Planar(Vector3.up);
+
+        bodyOrientation.position = headPosition - new Vector3(0, headPosition.y / 3, 0);
+        calculatedForward = (VectorHelpers.Average(bowHandPosition, arrowHandPosition) - bodyOrientation.position).Planar(Vector3.up);
+        bodyOrientation.forward = calculatedForward;
     }
 
     public void DestroyAllArrows()

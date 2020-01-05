@@ -4,7 +4,7 @@ public class OculusInputController : MonoBehaviour
 {
     public BowmanController bowman;
 
-    public Transform controllersParent;
+    public Transform controllersParent, thirdEyeTransform;
 
     public bool canAccessGameModeMenu { get; private set; }
 
@@ -18,7 +18,6 @@ public class OculusInputController : MonoBehaviour
     void Update()
     {
         GetInput();
-        ControlBowman();
 
         if (backButtonValue && !backButtonProcessed)
         {
@@ -55,14 +54,5 @@ public class OculusInputController : MonoBehaviour
 
         secondaryHandPosition = controllersParent.TransformPoint(OVRInput.GetLocalControllerPosition(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch));
         secondaryHandRotation = controllersParent.rotation * OVRInput.GetLocalControllerRotation(dominantHand == OVRInput.Handedness.RightHanded ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch);
-    }
-    private void ControlBowman()
-    {
-        bowman.arrowHandPosition = dominantHandPosition;
-        bowman.arrowHandRotation = dominantHandRotation;
-        bowman.bowHandPosition = secondaryHandPosition;
-        bowman.bowHandRotation = secondaryHandRotation;
-        bowman.holdArrow = primaryTriggerValue > 0;
-        bowman.watchAxes = secondaryStickValue;
     }
 }
