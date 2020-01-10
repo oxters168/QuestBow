@@ -76,7 +76,7 @@ public class SceneController : MonoBehaviour
 
         sceneControllerInScene.bowman.gameObject.SetActive(inGame);
         sceneControllerInScene.mainInput.SetMenuAccess(inGameLocation);
-        ShowGameModeMenu(inGameLocation);
+        ShowGameModeMenu(inGameLocation && !inGame);
         ShowLocationMenu(!inGameLocation);
     }
     public static void ShowGameModeMenu(bool onOff)

@@ -17,6 +17,7 @@ public class BowmanController : MonoBehaviour
 
     public OculusInputController vrInput;
 
+    public MeshRenderer quiverBoundsRenderer;
     public Transform bodyOrientation;
     public Vector3 arrowHandPosition, bowHandPosition, headPosition, headForward;
     public Quaternion arrowHandRotation, bowHandRotation;
@@ -53,6 +54,11 @@ public class BowmanController : MonoBehaviour
         DebugPanel.Log("Pull Distance", pullDistance);
     }
 
+    public void ShowOrientation(bool onOff)
+    {
+        quiverBoundsRenderer.enabled = onOff;
+        bodyOrientation.gameObject.SetActive(onOff);
+    }
     private void RetrieveVRInput()
     {
         if (vrInput != null)
@@ -70,10 +76,20 @@ public class BowmanController : MonoBehaviour
 
     private void CalculateBodyOrientation()
     {
-        Vector3 calculatedForward = headForward.Planar(Vector3.up);
+        Vector3 headPlanarForward = headForward.Planar(Vector3.up);
+        Vector3 bodyRight = Vector3.Cross(Vector3.up, headPlanarForward);
+        //Vector3 calculatedForward = headPlanarForward;
+
+        Vector3 bowHandDirection = (bowHandPosition - headPosition).normalized;
+        Vector3 bowHandPlanarDirection = bowHandDirection.Planar(Vector3.up);
+        float bowHandPlanarPercent = 1 - Vector3.Angle(bowHandDirection, bowHandPlanarDirection) / 90;
+        Vector3 arrowHandDirection = (arrowHandPosition - headPosition).normalized;
+        Vector3 arrowHandPlanarDirection = arrowHandDirection.Planar(Vector3.up);
+        float arrowHandPlanarPercent = 1 - Vector3.Angle(arrowHandDirection, arrowHandPlanarDirection) / 90;
 
         bodyOrientation.position = headPosition - new Vector3(0, headPosition.y / 3, 0);
-        calculatedForward = (VectorHelpers.Average(bowHandPosition, arrowHandPosition) - bodyOrientation.position).Planar(Vector3.up);
+        //calculatedForward = (VectorHelpers.Average(bowHandPosition, arrowHandPosition) - bodyOrientation.position).Planar(Vector3.up);
+        Vector3 calculatedForward = ((headPlanarForward + bowHandPlanarDirection * bowHandPlanarPercent + arrowHandPlanarDirection * arrowHandPlanarPercent) / 3).normalized;
         bodyOrientation.forward = calculatedForward;
     }
 

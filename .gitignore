@@ -120,8 +120,14 @@ Assets/Core/Combined Models/*
 Assets/Imported Assets/LowPolyWaterv2/*
 !Assets/Imported Assets/LowPolyWaterv2/.gitkeep
 
-Assets/AkilliMum/*
-!Assets/AkilliMum/.gitkeep
+Assets/Imported Assets/AkilliMum/*
+!Assets/Imported Assets/AkilliMum/.gitkeep
+
+Assets/Imported Assets/Ciconia Studio/Shaders/Double Sided Shaders/*
+!Assets/Imported Assets/Ciconia Studio/Shaders/Double Sided Shaders/.gitkeep
+
+Assets/Imported Assets/ArtisticMechanics/Bush-Craft Extension Pack/*
+!Assets/Imported Assets/ArtisticMechanics/Bush-Craft Extension Pack/.gitkeep
 
 #Doozy didn't let me put it in imported assets
 Assets/Doozy/*
