@@ -24,10 +24,13 @@ public class BowmanController : MonoBehaviour
     public bool holdArrow;
     public Vector2 watchAxes;
 
+    public bool debugValues;
+
     public int totalArrowsFired { get; private set; }
 
     private void Start()
     {
+        ShowOrientation(false);
         OVRManager.fixedFoveatedRenderingLevel = OVRManager.FixedFoveatedRenderingLevel.HighTop; //Will change where this is called to be more appropriate
     }
     private void Update()
@@ -47,11 +50,8 @@ public class BowmanController : MonoBehaviour
         UpdatePlaceholderArrow();
         ArrowCameraControls();
 
-        DebugPanel.Log("RH Position", arrowHandPosition);
-        DebugPanel.Log("Primary Trigger", holdArrow);
-        DebugPanel.Log("Arrow Held", arrowHeld);
-        DebugPanel.Log("Arrow In Place", arrowInPlace);
-        DebugPanel.Log("Pull Distance", pullDistance);
+        if (debugValues)
+            DebugValues();
     }
 
     public void ShowOrientation(bool onOff)
@@ -65,13 +65,25 @@ public class BowmanController : MonoBehaviour
         {
             headPosition = vrInput.thirdEyeTransform.position;
             headForward = vrInput.thirdEyeTransform.forward;
-            arrowHandPosition = vrInput.dominantHandPosition;
-            arrowHandRotation = vrInput.dominantHandRotation;
-            bowHandPosition = vrInput.secondaryHandPosition;
-            bowHandRotation = vrInput.secondaryHandRotation;
-            holdArrow = vrInput.primaryTriggerValue > 0;
-            watchAxes = vrInput.secondaryStickValue;
+            arrowHandPosition = vrInput.rightHandPosition;
+            arrowHandRotation = vrInput.rightHandRotation;
+            bowHandPosition = vrInput.leftHandPosition;
+            bowHandRotation = vrInput.leftHandRotation;
+            holdArrow = vrInput.rightTrigger;
+            watchAxes = vrInput.leftStickValue;
         }
+    }
+
+    public void ShowDebugValues(bool onOff)
+    {
+        debugValues = onOff;
+    }
+    private void DebugValues()
+    {
+        DebugPanel.Log("RH Position", arrowHandPosition);
+        DebugPanel.Log("Arrow Held", arrowHeld);
+        DebugPanel.Log("Arrow In Place", arrowInPlace);
+        DebugPanel.Log("Pull Distance", pullDistance);
     }
 
     private void CalculateBodyOrientation()
@@ -109,7 +121,6 @@ public class BowmanController : MonoBehaviour
         if (!holdArrow)
             arrowHeld = false;
 
-        //arrowPlaceholder.enabled = pullDistance <= 0;
         arrowTransform.gameObject.SetActive(arrowHeld && canShoot);
 
         if (arrowHeld)
@@ -125,7 +136,7 @@ public class BowmanController : MonoBehaviour
                 {
                     alignedPosition = bow.arrowPlacement.position - bow.arrowPlacement.forward * pullDistance;
                     arrowTransform.position = alignedPosition;
-                    arrowTransform.forward = bow.transform.forward;
+                    arrowTransform.rotation = bow.arrowPlacement.rotation;
                 }
             }
             else
@@ -136,13 +147,18 @@ public class BowmanController : MonoBehaviour
 
             if (pullDistance <= 0)
                 arrowInPlace = false;
+
+            quiverBoundsRenderer.material.color = Color.white;
         }
         else
         {
             arrowInPlace = false;
             pullDistance = 0;
 
-            arrowHeld = holdArrow && quiverBounds.IsPointInside(arrowHandPosition);
+            bool handInQuiver = quiverBounds.IsPointInside(arrowHandPosition);
+            arrowHeld = holdArrow && handInQuiver;
+
+            quiverBoundsRenderer.material.color = handInQuiver ? Color.green : Color.red;
         }
 
         bow.SetPullPercent(pullDistance / bow.maxPullDistance);

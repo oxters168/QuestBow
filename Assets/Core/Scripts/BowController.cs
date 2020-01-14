@@ -7,6 +7,7 @@ public class BowController : MonoBehaviour
     public ArrowController[] arrowsPool = new ArrowController[5];
     private int arrowPoolIndex;
 
+    public bool showTrajectory;
     public LineRenderer prediction;
     public float trajectoryTimestep = 0.2f;
     public float trajectoryTime = 5f;
@@ -36,11 +37,15 @@ public class BowController : MonoBehaviour
         Gizmos.DrawSphere(arrowPlacement.position, minArrowDistanceSqr * minArrowDistanceSqr);
     }
 
+    public void ShowTrajectory(bool onOff)
+    {
+        showTrajectory = onOff;
+    }
     private void DrawPrediction()
     {
-        prediction.gameObject.SetActive(pullPercent > 0);
+        prediction.gameObject.SetActive(showTrajectory && pullPercent > 0);
 
-        if (pullPercent > 0)
+        if (showTrajectory && pullPercent > 0)
         {
             int timesteps = Mathf.RoundToInt(trajectoryTime / trajectoryTimestep);
             prediction.positionCount = timesteps;
