@@ -14,6 +14,8 @@ public class SceneController : MonoBehaviour
     public GameObject[] hiddenInGame;
     public BowmanController bowman;
 
+    public bool canAccessGameModeMenu { get; private set; }
+
     private void Awake()
     {
         sceneControllerInScene = this;
@@ -23,6 +25,8 @@ public class SceneController : MonoBehaviour
     private void Update()
     {
         UpdateHUD();
+        if (mainInput.backButtonDown)
+            ShowGameModeMenu(!menuShown);
     }
 
     private void UpdateHUD()
@@ -64,6 +68,11 @@ public class SceneController : MonoBehaviour
         return sceneControllerInScene.scenes[sceneControllerInScene.currentScene].currentGameMode;
     }
 
+    public void SetMenuAccess(bool onOff)
+    {
+        canAccessGameModeMenu = onOff;
+    }
+
     public static void ApplyModeChange()
     {
         bool inGame = GetCurrentGameMode() != WorldData.GameType.none;
@@ -75,7 +84,7 @@ public class SceneController : MonoBehaviour
             hidden.SetActive(!inGame);
 
         sceneControllerInScene.bowman.gameObject.SetActive(inGame);
-        sceneControllerInScene.mainInput.SetMenuAccess(inGameLocation);
+        sceneControllerInScene.SetMenuAccess(inGameLocation);
         ShowGameModeMenu(inGameLocation && !inGame);
         ShowLocationMenu(!inGameLocation);
     }

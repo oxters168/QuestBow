@@ -3,19 +3,7 @@ using UnityHelpers;
 
 public class OculusInputController : MonoBehaviour
 {
-    public enum HandPose { relax, hold, pinch, }
-    public Animator leftHandAnimator, rightHandAnimator;
-    public HandPose leftHandPose { get; private set; }
-    public HandPose rightHandPose { get; private set; }
-
-    public GameObject leftTouchController, rightTouchController;
-    public GameObject leftHand, rightHand;
-
     public Transform controllersParent, thirdEyeTransform;
-
-    public bool canAccessGameModeMenu { get; private set; }
-
-    private bool backButtonProcessed;
 
     #region Raw Values
     public Vector3 rightHandPosition;
@@ -37,7 +25,7 @@ public class OculusInputController : MonoBehaviour
     public Vector2 rightStickValue;
     #endregion
 
-    #region Processing Values
+    #region Processed Values
     public bool backButtonDown;
     public bool backButtonUp;
     public bool backButtonTriggered;
@@ -104,19 +92,6 @@ public class OculusInputController : MonoBehaviour
 
         if (debugValues)
             DebugValues();
-
-        if (backButton && !backButtonProcessed)
-        {
-            //ondown
-            if (canAccessGameModeMenu)
-                SceneController.ShowGameModeMenu(!SceneController.menuShown);
-            backButtonProcessed = true;
-        }
-        else if (!backButton && backButtonProcessed)
-        {
-            //onup
-            backButtonProcessed = false;
-        }
     }
 
     public void SetDebug(bool onOff)
@@ -172,34 +147,6 @@ public class OculusInputController : MonoBehaviour
         DebugPanel.Log("Right Grip ", rightGrip);
         DebugPanel.Log("Right Grip Down", rightGripDown);
         DebugPanel.Log("Right Grip Up", rightGripUp);
-    }
-
-    public void SetLeftHandPose(HandPose pose)
-    {
-        leftHandPose = pose;
-        leftHandAnimator.SetTrigger(GetPoseTrigger(pose));
-    }
-    public void SetRightHandPose(HandPose pose)
-    {
-        rightHandPose = pose;
-        rightHandAnimator.SetTrigger(GetPoseTrigger(pose));
-    }
-    private string GetPoseTrigger(HandPose pose)
-    {
-        string poseName;
-        if (pose == HandPose.hold)
-            poseName = "Hold";
-        else if (pose == HandPose.pinch)
-            poseName = "Pinch";
-        else
-            poseName = "Relax";
-
-        return poseName;
-    }
-    public void SetMenuAccess(bool onOff)
-    {
-        canAccessGameModeMenu = onOff;
-        //SceneController.ShowGameModeMenu(canAccessGameModeMenu);
     }
 
     private void GetInput()
