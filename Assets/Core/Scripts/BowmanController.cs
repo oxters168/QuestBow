@@ -103,7 +103,7 @@ public class BowmanController : MonoBehaviour
             leftGrip = vrInput.leftGrip;
             rightTrigger = vrInput.rightTrigger;
             rightGrip = vrInput.rightGrip;
-            watchAxes = vrInput.leftStickValue;
+            watchAxes = vrInput.leftStickValue + vrInput.rightStickValue;
         }
         else if (!vrErrored)
         {

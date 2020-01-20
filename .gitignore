@@ -129,6 +129,9 @@ Assets/Imported Assets/Ciconia Studio/Shaders/Double Sided Shaders/*
 Assets/Imported Assets/ArtisticMechanics/Bush-Craft Extension Pack/*
 !Assets/Imported Assets/ArtisticMechanics/Bush-Craft Extension Pack/.gitkeep
 
+Assets/Imported Assets/64 flat icons/*
+!Assets/Imported Assets/64 flat icons/.gitkeep
+
 #Doozy didn't let me put it in imported assets
 Assets/Doozy/*
 !Assets/Doozy/.gitkeep
