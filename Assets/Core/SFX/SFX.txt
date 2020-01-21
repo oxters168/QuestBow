@@ -1,0 +1,20 @@
+Bow_Pull_String:
+CREAK_Wood_Tree_Creak_02_Long_mono (no goo), CREAK_Wood_Tree_Creak_01_Subtle_mono (goo)
+
+Bow_Out:
+IMPACT_Wood_Plank_On_Wood_Pile_02_Slide_mono + IMPACT_Wood_Plank_On_Wood_Pile_04_Multiple_mono (goo)
+
+Arrow_Puncture:
+Body; ARROW_Hit_Body_stereo
+Metal; ARROW_Hit_Metal_Armor_stereo, IMPACT_Incoming_Buzz_Metal_01_mono, IMPACT_Bullet_Metal_01_mono
+Plastic; IMPACT_Energy_Solid_06_mono
+Wood; ARROW_Hit_Wood_Shield_stereo
+
+Arrow_Shot:
+BOW_Release_Arrow_Large_mono (goo)
+
+Arrow_Take:
+BOW_Release_Arrow_Large_mono (no goo), IMPACT_Bullet_Metal_02_mono (goo), FABRIC_Movement_Fast_02_mono
+
+Arrow_Flight:
+IMPACT_Incoming_Buzz_Fast_Metallic_Kinetic_01_mono (no goo), IMPACT_Bullet_Metal_13_mono (goo?)

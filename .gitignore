@@ -132,6 +132,12 @@ Assets/Imported Assets/ArtisticMechanics/Bush-Craft Extension Pack/*
 Assets/Imported Assets/64 flat icons/*
 !Assets/Imported Assets/64 flat icons/.gitkeep
 
+Assets/Imported Assets/Universal Sound FX/*
+!Assets/Imported Assets/Universal Sound FX/.gitkeep
+
+Assets/Imported Assets/Rotary Heart/SerializableDictionary/*
+!Assets/Imported Assets/Rotary Heart/SerializableDictionary/.gitkeep
+
 #Doozy didn't let me put it in imported assets
 Assets/Doozy/*
 !Assets/Doozy/.gitkeep

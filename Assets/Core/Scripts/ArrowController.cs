@@ -1,13 +1,25 @@
 ﻿using UnityEngine;
 using UnityHelpers;
+using System.Linq;
+using RotaryHeart.Lib.SerializableDictionary;
+
+[System.Serializable]
+public class AudioTagtionary : SerializableDictionaryBase<string, AudioClip> { }
 
 public class ArrowController : MonoBehaviour
 {
+    [Tooltip("The key is the tag for hit gameobjects. If the tag can't be found will use first clip.")]
+    public AudioTagtionary punctureClips;
+    [Tooltip("Same as punctureClips except these clips are for one just hitting without penetration.")]
+    public AudioTagtionary hitClips;
+
+    public AudioSource flightAudio;
+    public AudioSource hitAudio;
+
     public Transform renderingRoot;
-    public Rigidbody mainBody, tipBody;
-    private FixedJoint joint;
+    public Rigidbody mainBody;
     public TreeCollider treeCollider;
-    //public float minimumPenetrationSpeed = 2;
+    public float minimumPenetrationSpeedPercent = 0.2f;
     public float minimumPenetrationAngle = 30;
     public float maxHurtValue = 20;
 
@@ -16,17 +28,82 @@ public class ArrowController : MonoBehaviour
     public Vector3 previousVelocity { get; private set; }
     public Vector3 previousForward { get; private set; }
 
+    public Vector3 shotPosition { get; private set; }
+    public Quaternion shotRotation { get; private set; }
+    public Vector3 shotVelocity { get; private set; }
+    public float shotSpeedSqr;
+    public float speedPercent { get; private set; }
+
     private void Start()
     {
-        joint = GetComponent<FixedJoint>();
         treeCollider.onCollided.AddListener(OnCollided);
+    }
+    private void Update()
+    {
+        if (shotSpeedSqr > 0)
+            speedPercent = previousVelocity.sqrMagnitude / shotSpeedSqr;
+        else
+            speedPercent = 0;
+
+        RefreshFlightAudio();
     }
     private void FixedUpdate()
     {
-        if (tipBody != null)
+        if (mainBody)
         {
             previousVelocity = mainBody.velocity;
             previousForward = mainBody.transform.forward;
+        }
+    }
+
+    private void RefreshFlightAudio()
+    {
+        if (speedPercent > 0)
+        {
+            speedPercent = previousVelocity.sqrMagnitude / shotSpeedSqr;
+            flightAudio.volume = speedPercent;
+            if (!flightAudio.isPlaying)
+                flightAudio.Play();
+        }
+        else if (flightAudio.isPlaying)
+            flightAudio.Stop();
+    }
+    private void PlayPunctureAudio(string tag)
+    {
+        AudioClip punctureClip = null;
+        if (punctureClips != null)
+        {
+            if (!string.IsNullOrEmpty(tag) && punctureClips.ContainsKey(tag))
+                punctureClip = punctureClips[tag];
+            else
+                punctureClip = punctureClips.First().Value;
+        }
+        else
+            Debug.LogError("No hit audio clips for arrow found");
+
+        if (punctureClip != null)
+        {
+            hitAudio.clip = punctureClip;
+            hitAudio.Play();
+        }
+    }
+    private void PlayHitAudio(string tag)
+    {
+        AudioClip hitClip = null;
+        if (hitClips != null)
+        {
+            if (!string.IsNullOrEmpty(tag) && hitClips.ContainsKey(tag))
+                hitClip = hitClips[tag];
+            else
+                hitClip = hitClips.First().Value;
+        }
+        else
+            Debug.LogError("No hit audio clips for arrow found");
+
+        if (hitClip != null)
+        {
+            hitAudio.clip = hitClip;
+            hitAudio.Play();
         }
     }
 
@@ -61,13 +138,18 @@ public class ArrowController : MonoBehaviour
             #region Penetration
             float penetrationAngle = Vector3.Angle(previousForward, previousVelocity.normalized);
             DebugPanel.Log(name + " puncture angle", penetrationAngle, 5);
-            if (penetrationAngle <= minimumPenetrationAngle)
+            DebugPanel.Log(name + " speed percent", speedPercent);
+            if (speedPercent > minimumPenetrationSpeedPercent && penetrationAngle <= minimumPenetrationAngle)
             {
+                PlayPunctureAudio(colInfo.collidedWith.tag);
+
                 var contactPoint = colInfo.collision.GetContact(0);
                 Vector3 punctureDirection = previousForward;
                 Debug.DrawRay(contactPoint.point, -punctureDirection, Color.red, 1000);
                 SetStuck(contactPoint.point, punctureDirection, colInfo.collidedWith.transform);
             }
+            else
+                PlayHitAudio(colInfo.collidedWith.tag);
             #endregion
         }
     }
@@ -82,14 +164,6 @@ public class ArrowController : MonoBehaviour
             Destroy(mainBody);
         else
             Debug.LogWarning("ArrowController: Tried to destroy mainBody, but it doesn't exist");
-        if (joint)
-            Destroy(joint);
-        else
-            Debug.LogWarning("ArrowController: Tried to destroy joint, but it doesn't exist");
-        if (tipBody)
-            Destroy(tipBody);
-        else
-            Debug.LogWarning("ArrowController: Tried to destroy tipBody, but it doesn't exist");
         //mainBody.isKinematic = onOff;
         //tipBody.isKinematic = onOff;
 
@@ -109,23 +183,23 @@ public class ArrowController : MonoBehaviour
             Destroy(arrowsInObject[i].gameObject);
     }
 
-    public void Translate(Vector3 position, Quaternion rotation, Vector3 velocity)
+    public void Shoot(Vector3 position, Quaternion rotation, Vector3 velocity)
     {
-        transform.position = position;
-        transform.rotation = rotation;
+        shotPosition = position;
+        shotRotation = rotation;
+        shotVelocity = velocity;
+        //shotSpeedSqr = shotVelocity.sqrMagnitude;
+
+        transform.position = shotPosition;
+        transform.rotation = shotRotation;
 
         ResetPhysics();
 
-        mainBody.velocity = velocity;
+        mainBody.velocity = shotVelocity;
     }
     public void ResetPhysics()
     {
         mainBody.velocity = Vector3.zero;
         mainBody.angularVelocity = Vector3.zero;
-        if (tipBody)
-        {
-            tipBody.velocity = Vector3.zero;
-            tipBody.angularVelocity = Vector3.zero;
-        }
     }
 }

@@ -7,6 +7,11 @@ public class BowController : MonoBehaviour
     public ArrowController[] arrowsPool = new ArrowController[5];
     private int arrowPoolIndex;
 
+    public AudioSource bowOutAudio, bowStringAudio, arrowShotAudio;
+    private Vector3 alignedPosition;
+    private float prevPullPercent;
+    private bool isStretching;
+
     public bool showTrajectory;
     public LineRenderer prediction;
     public float trajectoryTimestep = 0.2f;
@@ -29,7 +34,8 @@ public class BowController : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.right, Color.blue);
 
-        DrawPrediction();
+        UpdateStretchSound();
+        PredictTrajectory();
     }
     private void OnDrawGizmosSelected()
     {
@@ -37,11 +43,37 @@ public class BowController : MonoBehaviour
         Gizmos.DrawSphere(arrowPlacement.position, minArrowDistanceSqr * minArrowDistanceSqr);
     }
 
+    public void PlayBowPickupSound()
+    {
+        bowOutAudio.Play();
+    }
+    public void PlayArrowShotAudio()
+    {
+        arrowShotAudio.Play();
+    }
+    private void UpdateStretchSound()
+    {
+        bowStringAudio.transform.position = alignedPosition;
+        bowStringAudio.pitch = pullPercent * 0.2f + 1;
+        bool shouldStretch = Mathf.Abs(pullPercent - prevPullPercent) > 0.001f;
+        if (shouldStretch && !isStretching)
+        {
+            bowStringAudio.Play();
+            isStretching = true;
+        }
+        else if (!shouldStretch && isStretching)
+        {
+            bowStringAudio.Stop();
+            isStretching = false;
+        }
+        prevPullPercent = pullPercent;
+    }
+
     public void ShowTrajectory(bool onOff)
     {
         showTrajectory = onOff;
     }
-    private void DrawPrediction()
+    private void PredictTrajectory()
     {
         prediction.gameObject.SetActive(showTrajectory && pullPercent > 0);
 
@@ -88,7 +120,7 @@ public class BowController : MonoBehaviour
     }
     public float PullAmount(Vector3 position)
     {
-        var alignedPosition = position.ProjectPointToSurface(arrowPlacement.position, arrowPlacement.right);
+        alignedPosition = position.ProjectPointToSurface(arrowPlacement.position, arrowPlacement.right);
         float distance = Vector3.Distance(arrowPlacement.position, alignedPosition);
         Vector3 direction = alignedPosition - arrowPlacement.position;
         if (Vector3.Dot(direction, arrowPlacement.forward) >= 0)
@@ -108,9 +140,10 @@ public class BowController : MonoBehaviour
         GetArrow((arrow) =>
         {
             Vector3 fireVelocity = arrowFireSpot.forward * maxLaunchSpeed * pullPercent;
-            arrow.Translate(arrowFireSpot.position, arrowFireSpot.rotation, fireVelocity);
+            arrow.Shoot(arrowFireSpot.position, arrowFireSpot.rotation, fireVelocity);
             onArrowSpawn?.Invoke(arrow.transform);
         });
+        PlayArrowShotAudio();
     }
     private void GetArrow(System.Action<ArrowController> onGot)
     {
@@ -118,6 +151,7 @@ public class BowController : MonoBehaviour
             Destroy(arrowsPool[arrowPoolIndex].gameObject);
 
         arrowsPool[arrowPoolIndex] = Instantiate(arrowPrefab);
+        arrowsPool[arrowPoolIndex].shotSpeedSqr = maxLaunchSpeed * maxLaunchSpeed;
         onGot(arrowsPool[arrowPoolIndex]);
         arrowPoolIndex = (arrowPoolIndex + 1) % arrowsPool.Length;
     }

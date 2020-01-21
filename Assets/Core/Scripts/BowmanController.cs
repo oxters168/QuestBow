@@ -39,6 +39,8 @@ public class BowmanController : MonoBehaviour
     public bool leftTrigger, leftGrip, rightTrigger, rightGrip;
     public Vector2 watchAxes;
 
+    public AudioSource arrowTakeAudio;
+
     public bool debugValues;
 
     public bool leftHandInQuiver { get; private set; }
@@ -213,6 +215,7 @@ public class BowmanController : MonoBehaviour
         {
             bowHeld = false;
             bowHand = Hand.none;
+            //bow.PlayBowSound();
         }
 
         if (!bowHeld)
@@ -221,11 +224,13 @@ public class BowmanController : MonoBehaviour
             {
                 bowHeld = true;
                 bowHand = Hand.left;
+                bow.PlayBowPickupSound();
             }
             else if (rightGrip && rightHandInQuiver)
             {
                 bowHeld = true;
                 bowHand = Hand.right;
+                bow.PlayBowPickupSound();
             }
         }
 
@@ -308,14 +313,22 @@ public class BowmanController : MonoBehaviour
             {
                 arrowHeld = true;
                 arrowHand = Hand.left;
+                PlayArrowTakeAudio(leftHandPosition);
             }
             else if (rightTrigger && rightHandInQuiver)
             {
                 arrowHeld = true;
                 arrowHand = Hand.right;
+                PlayArrowTakeAudio(rightHandPosition);
             }
         }
 
         bow.SetPullPercent(pullDistance / bow.maxPullDistance);
+    }
+
+    public void PlayArrowTakeAudio(Vector3 position)
+    {
+        arrowTakeAudio.transform.position = position;
+        arrowTakeAudio.Play();
     }
 }

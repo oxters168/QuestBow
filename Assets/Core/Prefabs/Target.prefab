@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8753536076409944150}
   m_Layer: 13
   m_Name: TargetModel
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4176,7 +4176,7 @@ GameObject:
   - component: {fileID: 6660798131880165143}
   m_Layer: 13
   m_Name: Eight
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4317,7 +4317,7 @@ GameObject:
   - component: {fileID: 8548041528999541334}
   m_Layer: 13
   m_Name: Nine
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4458,7 +4458,7 @@ GameObject:
   - component: {fileID: 3137151084893358536}
   m_Layer: 13
   m_Name: Five
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4599,7 +4599,7 @@ GameObject:
   - component: {fileID: 8586678565701076117}
   m_Layer: 13
   m_Name: SuperTen
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4740,7 +4740,7 @@ GameObject:
   - component: {fileID: 7111883272035553711}
   m_Layer: 13
   m_Name: Ten
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4881,7 +4881,7 @@ GameObject:
   - component: {fileID: 6429097035872195655}
   m_Layer: 13
   m_Name: Six
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5018,7 +5018,7 @@ GameObject:
   - component: {fileID: 2132753047375602091}
   m_Layer: 13
   m_Name: Scores
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5063,7 +5063,7 @@ GameObject:
   - component: {fileID: 4487370666327624529}
   m_Layer: 13
   m_Name: Three
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5204,7 +5204,7 @@ GameObject:
   - component: {fileID: 5261660104718926199}
   m_Layer: 13
   m_Name: Four
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5345,7 +5345,7 @@ GameObject:
   - component: {fileID: 5845476111055923516}
   m_Layer: 13
   m_Name: One
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5486,7 +5486,7 @@ GameObject:
   - component: {fileID: 7912204252647995759}
   m_Layer: 13
   m_Name: Two
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5625,7 +5625,7 @@ GameObject:
   - component: {fileID: 923857823363912211}
   m_Layer: 13
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5743,7 +5743,7 @@ GameObject:
   - component: {fileID: 4102008932282696034}
   m_Layer: 13
   m_Name: Seven
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
