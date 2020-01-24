@@ -33,8 +33,15 @@ public class SceneController : MonoBehaviour
     {
         hud.arrowsLeft = scenes[currentScene].GetArrowsLeft();
         hud.score = scenes[currentScene].GetScore();
+        hud.startCountdown = scenes[currentScene].GetCountdownTime() - (Time.time - scenes[currentScene].GetRoundTimeStarted());
+        hud.roundTimeLeft = (scenes[currentScene].GetRoundTime() + scenes[currentScene].GetCountdownTime()) - (Time.time - scenes[currentScene].GetRoundTimeStarted());
     }
 
+    public void SetTargetGameRandomInterval(float seconds)
+    {
+        foreach (var scene in scenes)
+            scene.SetTargetGameRandomInterval(seconds);
+    }
     public void SetTargetGamePracticeDistance(float meters)
     {
         foreach (var scene in scenes)

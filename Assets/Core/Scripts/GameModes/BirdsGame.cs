@@ -39,4 +39,19 @@ public class BirdsGame : GenericGame
         foreach (var birdSpawn in birdSpawns)
             birdSpawn.gameObject.SetActive(onOff);
     }
+
+    public override float GetRoundStartTime()
+    {
+        return 0;
+    }
+
+    public override float GetCountdownTime()
+    {
+        return 0;
+    }
+
+    public override float GetRoundTime()
+    {
+        return -1;
+    }
 }

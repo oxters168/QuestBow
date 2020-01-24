@@ -39,4 +39,19 @@ public class HordeGame : GenericGame
         foreach (var enemySpawn in enemySpawns)
             enemySpawn.gameObject.SetActive(onOff);
     }
+
+    public override float GetRoundStartTime()
+    {
+        return 0;
+    }
+
+    public override float GetCountdownTime()
+    {
+        return 0;
+    }
+
+    public override float GetRoundTime()
+    {
+        return -1;
+    }
 }

@@ -39,6 +39,30 @@ public class WorldData : MonoBehaviour
 
         return score;
     }
+    public float GetRoundTimeStarted()
+    {
+        float roundTimeStarted = 0;
+        var gameMode = GetCurrentGameMode();
+        if (gameMode != null)
+            roundTimeStarted = gameMode.GetRoundStartTime();
+        return roundTimeStarted;
+    }
+    public float GetCountdownTime()
+    {
+        float countdownTime = 0;
+        var gameMode = GetCurrentGameMode();
+        if (gameMode != null)
+            countdownTime = gameMode.GetCountdownTime();
+        return countdownTime;
+    }
+    public float GetRoundTime()
+    {
+        float roundTime = -1;
+        var gameMode = GetCurrentGameMode();
+        if (gameMode != null)
+            roundTime = gameMode.GetRoundTime();
+        return roundTime;
+    }
     public GenericGame GetCurrentGameMode()
     {
         GenericGame gameMode = null;
@@ -47,6 +71,10 @@ public class WorldData : MonoBehaviour
             gameMode = gameModes[((int)currentGameMode) - 1];
 
         return gameMode;
+    }
+    public void SetTargetGameRandomInterval(float seconds)
+    {
+        DoActionToTargetGames((targetGame) => targetGame.SetRandomTargetInterval(seconds));
     }
     public void SetTargetGamePracticeDistance(float meters)
     {
