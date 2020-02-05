@@ -27,11 +27,15 @@ public class TargetGame : GenericGame
     private float randomTargetTime = 4;
     private float lastTargetShown = float.MinValue;
 
+    public WarningsController warnings;
+
     private void Start()
     {
         practiceTarget.onArrowHit += Target_onArrowHit;
         olympicTarget.onArrowHit += Target_onArrowHit;
         blitzTarget.onArrowHit += Target_onArrowHit;
+
+        //warnings.TrackObject(blitzTarget, 0, false);
     }
     private void Update()
     {

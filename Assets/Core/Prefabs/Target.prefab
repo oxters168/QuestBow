@@ -68,6 +68,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3649,10 +3650,10 @@ MonoBehaviour:
   - {x: -0.9659258, y: 0, z: 0.25881898, w: -1}
   - {x: -0.9659259, y: 0, z: 0.25881904, w: -1}
   - {x: -0.9659259, y: 0, z: 0.25881904, w: -1}
-  - {x: -0.99144477, y: 0, z: 0.13052633, w: -1}
-  - {x: -0.99144477, y: 0, z: 0.13052633, w: -1}
-  - {x: -0.9914448, y: 0, z: 0.13052633, w: -1}
-  - {x: -0.9914448, y: 0, z: 0.13052633, w: -1}
+  - {x: -0.99144477, y: 0, z: 0.13052636, w: -1}
+  - {x: -0.99144477, y: 0, z: 0.13052636, w: -1}
+  - {x: -0.9914448, y: 0, z: 0.13052636, w: -1}
+  - {x: -0.9914448, y: 0, z: 0.13052636, w: -1}
   - {x: -1, y: 0, z: 0.00000037239454, w: -1}
   - {x: -1, y: 0, z: 0.00000037239454, w: -1}
   - {x: -1, y: 0, z: 0.0000003723952, w: -1}
@@ -3665,10 +3666,10 @@ MonoBehaviour:
   - {x: -0.9659258, y: 0, z: -0.25881895, w: -1}
   - {x: -0.9659258, y: 0, z: -0.25881898, w: -1}
   - {x: -0.9659258, y: 0, z: -0.25881898, w: -1}
-  - {x: -0.92387956, y: 0, z: -0.38268316, w: -1}
-  - {x: -0.92387956, y: 0, z: -0.38268316, w: -1}
-  - {x: -0.9238797, y: 0, z: -0.3826832, w: -1}
-  - {x: -0.9238797, y: 0, z: -0.3826832, w: -1}
+  - {x: -0.9238797, y: 0, z: -0.38268316, w: -1}
+  - {x: -0.9238797, y: 0, z: -0.38268316, w: -1}
+  - {x: -0.9238797, y: 0, z: -0.38268316, w: -1}
+  - {x: -0.9238797, y: 0, z: -0.38268316, w: -1}
   - {x: -0.8660252, y: 0, z: -0.50000036, w: -1}
   - {x: -0.8660252, y: 0, z: -0.50000036, w: -1}
   - {x: -0.8660252, y: 0, z: -0.50000036, w: -1}
@@ -3691,8 +3692,8 @@ MonoBehaviour:
   - {x: -0.50000054, y: 0, z: -0.86602515, w: -1}
   - {x: -0.3826831, y: 0, z: -0.9238796, w: -1}
   - {x: -0.3826831, y: 0, z: -0.9238796, w: -1}
-  - {x: -0.38268316, y: 0, z: -0.9238796, w: -1}
-  - {x: -0.38268316, y: 0, z: -0.9238796, w: -1}
+  - {x: -0.38268307, y: 0, z: -0.9238797, w: -1}
+  - {x: -0.38268307, y: 0, z: -0.9238797, w: -1}
   - {x: -0.2588183, y: 0, z: -0.9659261, w: -1}
   - {x: -0.2588183, y: 0, z: -0.9659261, w: -1}
   - {x: -0.25881833, y: 0, z: -0.96592605, w: -1}
@@ -3701,10 +3702,10 @@ MonoBehaviour:
   - {x: -0.13052669, y: 0, z: -0.99144477, w: -1}
   - {x: -0.1305267, y: 0, z: -0.9914448, w: -1}
   - {x: -0.1305267, y: 0, z: -0.9914448, w: -1}
-  - {x: 0.000000058799174, y: 0, z: -1, w: -1}
-  - {x: 0.000000058799174, y: 0, z: -1, w: -1}
-  - {x: 0.000000058799326, y: 0, z: -1, w: -1}
-  - {x: 0.000000058799326, y: 0, z: -1, w: -1}
+  - {x: 0.000000065332415, y: 0, z: -1, w: -1}
+  - {x: 0.000000065332415, y: 0, z: -1, w: -1}
+  - {x: 0.000000065332586, y: 0, z: -1, w: -1}
+  - {x: 0.000000065332586, y: 0, z: -1, w: -1}
   - {x: 0.13052678, y: 0, z: -0.99144477, w: -1}
   - {x: 0.13052678, y: 0, z: -0.99144477, w: -1}
   - {x: 0.13052677, y: 0, z: -0.99144477, w: -1}
@@ -3717,14 +3718,14 @@ MonoBehaviour:
   - {x: 0.38268316, y: 0, z: -0.9238796, w: -1}
   - {x: 0.3826832, y: 0, z: -0.9238796, w: -1}
   - {x: 0.3826832, y: 0, z: -0.9238796, w: -1}
-  - {x: 0.49999994, y: 0, z: -0.8660254, w: -1}
-  - {x: 0.49999994, y: 0, z: -0.8660254, w: -1}
-  - {x: 0.5, y: 0, z: -0.86602545, w: -1}
-  - {x: 0.5, y: 0, z: -0.86602545, w: -1}
+  - {x: 0.50000006, y: 0, z: -0.8660254, w: -1}
+  - {x: 0.50000006, y: 0, z: -0.8660254, w: -1}
+  - {x: 0.50000006, y: 0, z: -0.86602545, w: -1}
+  - {x: 0.50000006, y: 0, z: -0.86602545, w: -1}
   - {x: 0.6087612, y: 0, z: -0.79335356, w: -1}
   - {x: 0.6087612, y: 0, z: -0.79335356, w: -1}
-  - {x: 0.6087611, y: 0, z: -0.79335356, w: -1}
-  - {x: 0.6087611, y: 0, z: -0.79335356, w: -1}
+  - {x: 0.6087612, y: 0, z: -0.79335356, w: -1}
+  - {x: 0.6087612, y: 0, z: -0.79335356, w: -1}
   - {x: 0.707107, y: 0, z: -0.7071066, w: -1}
   - {x: 0.707107, y: 0, z: -0.7071066, w: -1}
   - {x: 0.70710695, y: 0, z: -0.7071066, w: -1}
@@ -3765,24 +3766,24 @@ MonoBehaviour:
   - {x: 0.92387956, y: 0, z: 0.38268325, w: -1}
   - {x: 0.9238796, y: 0, z: 0.38268322, w: -1}
   - {x: 0.9238796, y: 0, z: 0.38268322, w: -1}
+  - {x: 0.86602557, y: 0, z: 0.49999988, w: -1}
+  - {x: 0.86602557, y: 0, z: 0.49999988, w: -1}
   - {x: 0.8660255, y: 0, z: 0.4999998, w: -1}
   - {x: 0.8660255, y: 0, z: 0.4999998, w: -1}
-  - {x: 0.8660255, y: 0, z: 0.4999998, w: -1}
-  - {x: 0.8660255, y: 0, z: 0.4999998, w: -1}
+  - {x: 0.7933532, y: 0, z: 0.60876155, w: -1}
+  - {x: 0.7933532, y: 0, z: 0.60876155, w: -1}
   - {x: 0.79335326, y: 0, z: 0.60876155, w: -1}
   - {x: 0.79335326, y: 0, z: 0.60876155, w: -1}
-  - {x: 0.7933533, y: 0, z: 0.6087615, w: -1}
-  - {x: 0.7933533, y: 0, z: 0.6087615, w: -1}
-  - {x: 0.70710677, y: 0, z: 0.7071068, w: -1}
-  - {x: 0.70710677, y: 0, z: 0.7071068, w: -1}
+  - {x: 0.7071068, y: 0, z: 0.70710677, w: -1}
+  - {x: 0.7071068, y: 0, z: 0.70710677, w: -1}
   - {x: 0.70710677, y: 0, z: 0.7071067, w: -1}
   - {x: 0.70710677, y: 0, z: 0.7071067, w: -1}
   - {x: 0.6087618, y: 0, z: 0.7933531, w: -1}
   - {x: 0.6087618, y: 0, z: 0.7933531, w: -1}
   - {x: 0.6087617, y: 0, z: 0.7933531, w: -1}
   - {x: 0.6087617, y: 0, z: 0.7933531, w: -1}
-  - {x: 0.5000003, y: 0, z: 0.86602527, w: -1}
-  - {x: 0.5000003, y: 0, z: 0.86602527, w: -1}
+  - {x: 0.50000024, y: 0, z: 0.8660252, w: -1}
+  - {x: 0.50000024, y: 0, z: 0.8660252, w: -1}
   - {x: 0.50000024, y: 0, z: 0.86602527, w: -1}
   - {x: 0.50000024, y: 0, z: 0.86602527, w: -1}
   - {x: 0.38268334, y: 0, z: 0.9238795, w: -1}
@@ -4129,38 +4130,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1041015445580726648
 GameObject:
   m_ObjectHideFlags: 0
@@ -4228,6 +4215,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4270,38 +4258,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1097386115630450686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,6 +4343,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4411,38 +4386,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &2472687735577664589
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,6 +4471,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4552,38 +4514,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &3354730724713424057
 GameObject:
   m_ObjectHideFlags: 0
@@ -4651,6 +4599,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4693,38 +4642,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &4152989774695908151
 GameObject:
   m_ObjectHideFlags: 0
@@ -4792,6 +4727,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4834,38 +4770,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &5836168008937259096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,6 +4855,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4975,38 +4898,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &6262218697920534231
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,6 +5024,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5157,38 +5067,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &6801524461565344818
 GameObject:
   m_ObjectHideFlags: 0
@@ -5256,6 +5152,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5298,38 +5195,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &7863364132345623236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5397,6 +5280,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5439,38 +5323,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &8060896739397757928
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,6 +5408,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5580,38 +5451,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &8230657820579164404
 GameObject:
   m_ObjectHideFlags: 0
@@ -5621,6 +5478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1127536385882329839}
+  - component: {fileID: 6586814978252422305}
   - component: {fileID: 5864002982812440698}
   - component: {fileID: 923857823363912211}
   m_Layer: 13
@@ -5646,6 +5504,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6586814978252422305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230657820579164404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e342bde2da45d409c1e83b39c2946a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackOnScreen: 0
+  ttl: 0
 --- !u!114 &5864002982812440698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5696,38 +5568,24 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &8417535399820902255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,6 +5653,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5837,35 +5696,21 @@ MonoBehaviour:
   onCollided:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityHelpers.TreeCollider+UnifiedCollisionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
