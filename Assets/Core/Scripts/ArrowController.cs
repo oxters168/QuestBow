@@ -119,8 +119,7 @@ public class ArrowController : MonoBehaviour
             HealthController hitHealth = colInfo.collidedWith.GetComponentInParent<HealthController>();
             if (hitHealth != null)
             {
-                //Need to calculate hurt value
-                hitHealth.HurtValue(maxHurtValue);
+                hitHealth.HurtValue(speedPercent * maxHurtValue);
             }
             #endregion
             #region Physics

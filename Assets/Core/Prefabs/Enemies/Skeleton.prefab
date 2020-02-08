@@ -2100,7 +2100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5783508728106233761}
-  - component: {fileID: 8839353663713226416}
+  - component: {fileID: 548910954776043656}
   - component: {fileID: 7765104730115128146}
   m_Layer: 0
   m_Name: Character
@@ -2127,7 +2127,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8839353663713226416
+--- !u!114 &548910954776043656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2136,16 +2136,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5783508728106233760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32c409f5cb3e3645a149f0cab212005, type: 3}
+  m_Script: {fileID: 11500000, guid: ff474f31ffb6e2c40a2b795d2787fa1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.33
-  rotationSpeed: 10
-  minimumAngleOffset: 1
-  respawnTime: 10
+  animator: {fileID: 5783508728233771191}
+  behaviour: {fileID: 11400000, guid: af93450fa52881c46b54e90581aee5e2, type: 2}
+  deathTime: 3
   target: {fileID: 0}
   puppet: {fileID: 7797542272418296733}
-  accurateSelf: {fileID: 5783508728233771190}
 --- !u!114 &7765104730115128146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,7 +2170,7 @@ MonoBehaviour:
   onDead:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7797542272418296733}
+      - m_Target: {fileID: 548910954776043656}
         m_MethodName: Kill
         m_Mode: 1
         m_Arguments:
@@ -2890,7 +2888,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 9415ea17123ba5b498aad38b7dd97856, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

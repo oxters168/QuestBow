@@ -141,7 +141,7 @@ public class BowController : MonoBehaviour
         {
             Vector3 fireVelocity = arrowFireSpot.forward * maxLaunchSpeed * pullPercent;
             arrow.Shoot(arrowFireSpot.position, arrowFireSpot.rotation, fireVelocity);
-            onArrowSpawn?.Invoke(arrow.transform);
+            onArrowSpawn?.Invoke(arrow.transform, null);
         });
         PlayArrowShotAudio();
     }

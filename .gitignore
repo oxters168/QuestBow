@@ -138,6 +138,9 @@ Assets/Imported Assets/Universal Sound FX/*
 Assets/Imported Assets/Rotary Heart/SerializableDictionary/*
 !Assets/Imported Assets/Rotary Heart/SerializableDictionary/.gitkeep
 
+Assets/Imported Assets/HEROIC FANTASY CREATURES FULL PACK/*
+!Assets/Imported Assets/HEROIC FANTASY CREATURES FULL PACK/.gitkeep
+
 #Doozy didn't let me put it in imported assets
 Assets/Doozy/*
 !Assets/Doozy/.gitkeep

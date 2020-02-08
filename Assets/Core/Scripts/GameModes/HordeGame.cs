@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityHelpers;
 
 public class HordeGame : GenericGame
 {
-    public GameObject[] enemySpawns;
+    public PoolSpawner[] enemySpawns;
     private bool inGame;
 
     public override void EndGame()
@@ -37,7 +38,11 @@ public class HordeGame : GenericGame
     private void SetEnemiesActive(bool onOff)
     {
         foreach (var enemySpawn in enemySpawns)
+        {
             enemySpawn.gameObject.SetActive(onOff);
+            if (!onOff)
+                enemySpawn.ReturnAll();
+        }
     }
 
     public override float GetRoundStartTime()

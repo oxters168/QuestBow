@@ -3,46 +3,36 @@ using UnityHelpers;
 
 public class SpawnFunctionsController : MonoBehaviour
 {
-    public string enemiesPoolName;
-    private ObjectPool<Transform> enemiesPool;
+    //public string enemiesPoolName;
+    //private ObjectPool<Transform> enemiesPool;
     //private Transform arrowStartTransform;
     public OrbitCameraController arrowCamera;
     public Transform mainEnemyTarget;
 
     private void Start()
     {
-        enemiesPool = PoolManager.GetPool(enemiesPoolName);
+        //enemiesPool = PoolManager.GetPool(enemiesPoolName);
         //arrowStartTransform = new GameObject("Arrow Start Position").transform;
     }
 
-    public void OnBirdSpawned(Transform birdTransform)
+    public void OnBirdSpawned(Transform birdTransform, string poolName)
     {
         var bird = birdTransform.GetComponent<BirdController>();
         bird.Revive();
         bird.SetRandomSkin();
     }
-    public void OnEnemySpawned(Transform enemyTransform)
+    public void OnEnemySpawned(Transform enemyTransform, string poolName)
     {
         var enemy = enemyTransform.GetComponentInChildren<EnemyController>();
-        enemy.puppet.Resurrect();
-        enemy.puppet.Rebuild();
-        enemy.puppet.Teleport(enemyTransform.position, enemyTransform.rotation, true);
-        enemy.target = mainEnemyTarget; //Temporary, will find better solution
-
-        float diedAt = -1;
-        StartCoroutine(CommonRoutines.WaitToDoAction(success =>
+        var whenceYouCame = PoolManager.GetPool(poolName);
+        enemy.Spawn(enemyTransform.position, enemyTransform.rotation, () =>
         {
-            ArrowController.DestroyArrowsInObject(enemy.transform);
-            enemiesPool.Return(enemy.transform);
-        }, 0, () =>
-        {
-            if (enemy.isDead && diedAt < 0)
-                diedAt = Time.time;
+            whenceYouCame.Return(enemy.transform);
+        });
 
-            return enemy.isDead && Time.time - diedAt >= enemy.respawnTime;
-        }));
+        enemy.enemyTarget = mainEnemyTarget; //Temporary, will find better solution
     }
-    public void OnArrowSpawned(Transform arrowTransform)
+    public void OnArrowSpawned(Transform arrowTransform, string poolName)
     {
         arrowCamera.target = arrowTransform;
         //arrowStartTransform.position = arrowTransform.position;
