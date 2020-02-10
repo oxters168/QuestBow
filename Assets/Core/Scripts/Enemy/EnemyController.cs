@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+using UnityHelpers;
 using System.Linq;
 
 public class EnemyController : MonoBehaviour
 {
     public Animator animator;
+    public HealthController health;
 
-    [Tooltip("'Walk', 'Dead'")]
+    [Tooltip("Important Keys: 'Idle', 'Walk', 'Dead'")]
     public BehaviourData behaviour;
 
     private float currentAttackLength, lastAttackTime;
@@ -66,6 +68,7 @@ public class EnemyController : MonoBehaviour
         isDead = false;
 
         diedAt = -1;
+        health.SetPercent(1);
 
         selfTargetRoot.position = position;
         selfTargetRoot.rotation = rotation;
@@ -102,7 +105,7 @@ public class EnemyController : MonoBehaviour
     {
         StateData currentState = null;
 
-        if (currentAttackLength <= 0 || Time.time - lastAttackTime > currentAttackLength)
+        if (IsDead() || currentAttackLength <= 0 || Time.time - lastAttackTime > currentAttackLength)
         {
             currentAttackLength = 0;
 

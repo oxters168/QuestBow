@@ -1426,8 +1426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2605394859887987109}
+  health: {fileID: 6116277948612298063}
   behaviour: {fileID: 11400000, guid: 2d7c33fd6a0d02148893a4cf02b10c8c, type: 2}
-  deathTime: 3
   selfTargetRoot: {fileID: 0}
   enemyTarget: {fileID: 0}
 --- !u!114 &6116277948612298063
@@ -1444,6 +1444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPercent: 1
   fullValue: 20
+  value: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

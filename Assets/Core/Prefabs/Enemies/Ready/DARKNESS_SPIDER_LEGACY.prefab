@@ -2462,6 +2462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6752810987494302717}
+  health: {fileID: 3626305642552338973}
   behaviour: {fileID: 11400000, guid: d0ba6fc89c631cf4fb7ca711b2d475fb, type: 2}
   selfTargetRoot: {fileID: 0}
   enemyTarget: {fileID: 0}
@@ -2479,6 +2480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPercent: 1
   fullValue: 20
+  value: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
