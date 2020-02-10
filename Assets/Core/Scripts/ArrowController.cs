@@ -195,6 +195,7 @@ public class ArrowController : MonoBehaviour
         ResetPhysics();
 
         mainBody.velocity = shotVelocity;
+        previousVelocity = shotVelocity;
     }
     public void ResetPhysics()
     {

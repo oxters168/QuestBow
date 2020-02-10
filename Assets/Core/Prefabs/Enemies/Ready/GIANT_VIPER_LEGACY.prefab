@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897784695}
+  - component: {fileID: 1168711076146313303}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail7
   m_TagString: Untagged
@@ -30,7 +31,20 @@ Transform:
   - {fileID: 2605394859897913233}
   m_Father: {fileID: 2605394859897806081}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.82474506, y: -4.9819345, z: 0.88751507}
+--- !u!65 &1168711076146313303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897489195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.836605, y: 14.774216, z: 16.569345}
+  m_Center: {x: -21.91734, y: 0.55947423, z: -0.095234156}
 --- !u!1 &2605394859897490685
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897846755}
+  - component: {fileID: 3856772269149921424}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine4
   m_TagString: Untagged
@@ -62,7 +77,20 @@ Transform:
   - {fileID: 2605394859897826235}
   m_Father: {fileID: 2605394859897852533}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.6840006, y: -2.6893606, z: 10.014495}
+--- !u!65 &3856772269149921424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897490685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.281172, y: 23.965899, z: 25.296015}
+  m_Center: {x: -10.640583, y: -1.9064445, z: -0.00000022106242}
 --- !u!1 &2605394859897500799
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +122,7 @@ Transform:
   - {fileID: 2605394859897830767}
   m_Father: {fileID: 2605394859897860737}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.00000047708573, y: -0.0000064300025, z: -4.2433844}
 --- !u!1 &2605394859897501535
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897873707}
+  - component: {fileID: 4445673996766964463}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine
   m_TagString: Untagged
@@ -125,7 +154,20 @@ Transform:
   - {fileID: 2605394859897855881}
   m_Father: {fileID: 2605394859897788087}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -86.25926, y: 0.1790978, z: 89.77248}
+--- !u!65 &4445673996766964463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897501535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 36.155083, y: 27.263464, z: 30.663637}
+  m_Center: {x: -15.80768, y: -1.709448, z: -0.000000002231494}
 --- !u!1 &2605394859897502569
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897852479}
+  - component: {fileID: 7486620080458560589}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine2
   m_TagString: Untagged
@@ -157,7 +200,20 @@ Transform:
   - {fileID: 2605394859897852533}
   m_Father: {fileID: 2605394859897855881}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.052661207, y: -20.432575, z: 0.0113137085}
+--- !u!65 &7486620080458560589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897502569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.442081, y: 25.144033, z: 27.036156}
+  m_Center: {x: -14.721055, y: -1.7029476, z: -0.075682975}
 --- !u!1 &2605394859897506447
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897826235}
+  - component: {fileID: 8292429453180181213}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine5
   m_TagString: Untagged
@@ -189,7 +246,20 @@ Transform:
   - {fileID: 2605394859897910725}
   m_Father: {fileID: 2605394859897846755}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.8748989, y: 4.2428713, z: 10.689071}
+--- !u!65 &8292429453180181213
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897506447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 27.835495, y: 24.786064, z: 25.428474}
+  m_Center: {x: -13.4177685, y: -1.5876489, z: -0.005269734}
 --- !u!1 &2605394859897507347
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897791931}
+  - component: {fileID: 2183140136830252711}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Head
   m_TagString: Untagged
@@ -222,7 +293,20 @@ Transform:
   - {fileID: 2605394859897837321}
   m_Father: {fileID: 2605394859897857495}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.641663, y: 11.94256, z: -19.936375}
+--- !u!65 &2183140136830252711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897507347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.559772, y: 35.791855, z: 31.351646}
+  m_Center: {x: -21.27989, y: 9.216053, z: -0.06747369}
 --- !u!1 &2605394859897507805
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897906463}
+  - component: {fileID: 8516978473035814847}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail3
   m_TagString: Untagged
@@ -253,7 +338,20 @@ Transform:
   - {fileID: 2605394859897838367}
   m_Father: {fileID: 2605394859897828675}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.045939308, y: 27.16285, z: -0.28430635}
+--- !u!65 &8516978473035814847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897507805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.406845, y: 25.467443, z: 26.432837}
+  m_Center: {x: -21.703032, y: 2.5548644, z: 0.04061994}
 --- !u!1 &2605394859897507855
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897857495}
+  - component: {fileID: 8390180827364393335}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Neck
   m_TagString: Untagged
@@ -284,7 +383,20 @@ Transform:
   - {fileID: 2605394859897791931}
   m_Father: {fileID: 2605394859897792769}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.387196, y: 6.634604, z: -20.67584}
+--- !u!65 &8390180827364393335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897507855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.174006, y: 26.193464, z: 28.13915}
+  m_Center: {x: -11.087069, y: -1.0920712, z: 0.0000026118682}
 --- !u!1 &2605394859897514775
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +427,7 @@ Transform:
   - {fileID: 2605394859897824435}
   m_Father: {fileID: 2605394859897830767}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0002942375, y: 0.0000030696253, z: 21.203693}
 --- !u!1 &2605394859897515445
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897838367}
+  - component: {fileID: 3956270660592548098}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail4
   m_TagString: Untagged
@@ -346,7 +459,20 @@ Transform:
   - {fileID: 2605394859897829507}
   m_Father: {fileID: 2605394859897906463}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.24284495, y: 31.02506, z: 0.32031795}
+--- !u!65 &3956270660592548098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897515445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.878986, y: 23.048159, z: 24.561615}
+  m_Center: {x: -21.93982, y: 2.3351016, z: -0.040213928}
 --- !u!1 &2605394859897520189
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897828675}
+  - component: {fileID: 494697052732349903}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail2
   m_TagString: Untagged
@@ -377,7 +504,20 @@ Transform:
   - {fileID: 2605394859897906463}
   m_Father: {fileID: 2605394859897871809}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.99780536, y: -1.7190104, z: -0.6633399}
+--- !u!65 &494697052732349903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897520189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 45.71529, y: 26.598879, z: 27.67314}
+  m_Center: {x: -22.35761, y: 2.5268853, z: -0.000002779978}
 --- !u!1 &2605394859897524879
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +547,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2605394859897791931}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0001474293, y: 179.99959, z: -12.784289}
 --- !u!1 &2605394859897526753
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897806081}
+  - component: {fileID: 9060261915604386217}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail6
   m_TagString: Untagged
@@ -438,7 +579,20 @@ Transform:
   - {fileID: 2605394859897784695}
   m_Father: {fileID: 2605394859897829507}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0022021458, y: 14.809948, z: 1.7156928}
+--- !u!65 &9060261915604386217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897526753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.97417, y: 18.007599, z: 19.276194}
+  m_Center: {x: -21.9874, y: 0.4547167, z: -0.0043355236}
 --- !u!1 &2605394859897527387
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897852533}
+  - component: {fileID: 6061770449696641160}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine3
   m_TagString: Untagged
@@ -579,7 +734,20 @@ Transform:
   - {fileID: 2605394859897846755}
   m_Father: {fileID: 2605394859897852479}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.8667374, y: -8.881903, z: 14.537868}
+--- !u!65 &6061770449696641160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897527597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.70586, y: 23.980108, z: 25.55539}
+  m_Center: {x: -13.852944, y: -1.9459004, z: -0.046331435}
 --- !u!1 &2605394859897528681
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,6 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897913233}
+  - component: {fileID: 272267761716299534}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail8
   m_TagString: Untagged
@@ -610,7 +779,20 @@ Transform:
   - {fileID: 2605394859897909015}
   m_Father: {fileID: 2605394859897784695}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.023046, y: -33.448795, z: -1.619139}
+--- !u!65 &272267761716299534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897528681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 45.25131, y: 13.427962, z: 14.352752}
+  m_Center: {x: -22.125605, y: 0.51581603, z: -0.058057293}
 --- !u!1 &2605394859897532531
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +822,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2605394859897791931}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000005699344, y: -0.00043644465, z: -167.2157}
 --- !u!1 &2605394859897533777
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897871809}
+  - component: {fileID: 7734304745097386483}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail1
   m_TagString: Untagged
@@ -672,7 +855,20 @@ Transform:
   - {fileID: 2605394859897828675}
   m_Father: {fileID: 2605394859897820759}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.2476941, y: -23.54286, z: 1.068509}
+--- !u!65 &7734304745097386483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897533777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.777855, y: 26.81708, z: 28.76154}
+  m_Center: {x: -21.38891, y: 2.4166772, z: 0.1633005}
 --- !u!1 &2605394859897535389
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +898,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2605394859897788087}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.000013660381, y: 90.000046, z: -83.80529}
 --- !u!1 &2605394859897542327
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +929,7 @@ Transform:
   - {fileID: 2605394859897785271}
   m_Father: {fileID: 2605394859897905755}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.00037194538, y: -179.99956, z: 147.06952}
 --- !u!1 &2605394859897544707
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +959,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2605394859897832533}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.00013525457, y: -0.00014461503, z: 12.795814}
 --- !u!1 &2605394859897549377
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +990,7 @@ Transform:
   - {fileID: 2605394859897860737}
   m_Father: {fileID: 2605394859897791931}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.000019059036, y: -0.00050891156, z: 10.344979}
 --- !u!1 &2605394859897558183
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +1000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897909015}
+  - component: {fileID: 7262236105809656012}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail9
   m_TagString: Untagged
@@ -824,7 +1021,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2605394859897913233}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.25711265, y: -35.15629, z: -14.954399}
+--- !u!65 &7262236105809656012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897558183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.290596, y: 12.064481, z: 12.859239}
+  m_Center: {x: -18.645126, y: 0.56598294, z: 0.06181158}
 --- !u!1 &2605394859897559391
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +1044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897829507}
+  - component: {fileID: 4227239640772332491}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail5
   m_TagString: Untagged
@@ -855,7 +1066,20 @@ Transform:
   - {fileID: 2605394859897806081}
   m_Father: {fileID: 2605394859897838367}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.8682478, y: 32.459625, z: 1.4443637}
+--- !u!65 &4227239640772332491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897559391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.776894, y: 20.565437, z: 21.821753}
+  m_Center: {x: -21.888435, y: 1.2642059, z: 0.0866977}
 --- !u!1 &2605394859897564321
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +1089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897855881}
+  - component: {fileID: 8886136950564354401}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine1
   m_TagString: Untagged
@@ -887,7 +1112,20 @@ Transform:
   - {fileID: 2605394859897852479}
   m_Father: {fileID: 2605394859897873707}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.045589257, y: -23.521404, z: -0.003088456}
+--- !u!65 &8886136950564354401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897564321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.5818, y: 27.15505, z: 28.339058}
+  m_Center: {x: -16.790922, y: -1.6683217, z: -0.0000027840065}
 --- !u!1 &2605394859897566375
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +1135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897792769}
+  - component: {fileID: 1264647153738682748}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine7
   m_TagString: Untagged
@@ -919,7 +1158,20 @@ Transform:
   - {fileID: 2605394859897857495}
   m_Father: {fileID: 2605394859897910725}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.5427985, y: 3.1510842, z: 0.43933177}
+--- !u!65 &1264647153738682748
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897566375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.114956, y: 25.235111, z: 27.769344}
+  m_Center: {x: -16.557495, y: -2.0088983, z: 0.048325464}
 --- !u!1 &2605394859897571017
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +1181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897820759}
+  - component: {fileID: 3857033505086374647}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Tail
   m_TagString: Untagged
@@ -950,7 +1203,20 @@ Transform:
   - {fileID: 2605394859897871809}
   m_Father: {fileID: 2605394859897788087}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -68.361115, y: -179.32454, z: 90.42404}
+--- !u!65 &3857033505086374647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897571017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.484623, y: 27.829792, z: 30.58847}
+  m_Center: {x: -18.653156, y: 2.061927, z: -0.07999583}
 --- !u!1 &2605394859897575033
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +1226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605394859897910725}
+  - component: {fileID: 920594269357173812}
   m_Layer: 0
   m_Name: GIANT_VIPER_ Spine6
   m_TagString: Untagged
@@ -982,7 +1249,20 @@ Transform:
   - {fileID: 2605394859897792769}
   m_Father: {fileID: 2605394859897826235}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.0762835, y: 1.6211118, z: 14.489188}
+--- !u!65 &920594269357173812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897575033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 24.851349, y: 24.370361, z: 26.006594}
+  m_Center: {x: -11.925684, y: -1.7235403, z: -0.000010828081}
 --- !u!1 &2605394859897576639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1295,7 @@ Transform:
   - {fileID: 2605394859897820759}
   m_Father: {fileID: 2605394859897815831}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 83.80525, y: -89.99993, z: 0.000015824131}
 --- !u!1 &2605394859897583231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1326,7 @@ Transform:
   - {fileID: 2605394859897832533}
   m_Father: {fileID: 2605394859897785271}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.1723714}
 --- !u!1 &2605394859897584733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1357,7 @@ Transform:
   - {fileID: 2605394859897788087}
   m_Father: {fileID: 2605394859897850651}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &2605394859897584975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1368,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2605394859897850651}
   - component: {fileID: 2605394859887987109}
+  - component: {fileID: 272074828966704821}
+  - component: {fileID: 6116277948612298063}
+  - component: {fileID: 4860282166631198393}
   m_Layer: 0
   m_Name: GIANT_VIPER_LEGACY
   m_TagString: Untagged
@@ -1130,3 +1413,71 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &272074828966704821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897584975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32c409f5cb3e3645a149f0cab212005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2605394859887987109}
+  behaviour: {fileID: 11400000, guid: 2d7c33fd6a0d02148893a4cf02b10c8c, type: 2}
+  deathTime: 3
+  selfTargetRoot: {fileID: 0}
+  enemyTarget: {fileID: 0}
+--- !u!114 &6116277948612298063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897584975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21175e1eea6a273468aa6038bfb53de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPercent: 1
+  fullValue: 20
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  onDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 272074828966704821}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4860282166631198393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605394859897584975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e342bde2da45d409c1e83b39c2946a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackOnScreen: 0
+  ttl: 0

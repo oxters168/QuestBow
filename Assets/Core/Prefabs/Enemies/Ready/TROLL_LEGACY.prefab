@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071248959}
+  - component: {fileID: 5332337275621658959}
   m_Layer: 0
   m_Name: TROLL_ R Calf
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 6615815443071336453}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5332337275621658959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443070881367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3360466, y: 0.62979376, z: 0.6548564}
+  m_Center: {x: -0.24627161, y: -0.08145093, z: 0.019465616}
 --- !u!1 &6615815443070882063
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071323935}
+  - component: {fileID: 6871584593522412585}
   m_Layer: 0
   m_Name: TROLL_ R UpperArm
   m_TagString: Untagged
@@ -62,6 +77,19 @@ Transform:
   m_Father: {fileID: 6615815443071346397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6871584593522412585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443070882063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3915304, y: 0.7730713, z: 0.6729605}
+  m_Center: {x: -0.669505, y: 0.03781751, z: 0.016868379}
 --- !u!1 &6615815443070883921
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071367311}
+  - component: {fileID: 4576641958379781697}
   m_Layer: 0
   m_Name: TROLL_ R Hand
   m_TagString: Untagged
@@ -95,6 +124,19 @@ Transform:
   m_Father: {fileID: 6615815443071364381}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4576641958379781697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443070883921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2141919, y: 0.5925252, z: 0.9888018}
+  m_Center: {x: -0.6758858, y: 0.0833666, z: 0.09989314}
 --- !u!1 &6615815443070884065
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071329451}
+  - component: {fileID: 4554072559199294975}
   m_Layer: 0
   m_Name: TROLL_ Neck
   m_TagString: Untagged
@@ -253,6 +296,19 @@ Transform:
   m_Father: {fileID: 6615815443071323105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4554072559199294975
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443070891605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41011086, y: 1, z: 0.7954593}
+  m_Center: {x: -0.33320153, y: -0.0000000404723, z: -0.0000000044122666}
 --- !u!1 &6615815443070894163
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071336453}
+  - component: {fileID: 1449477384459839862}
   m_Layer: 0
   m_Name: TROLL_ R Thigh
   m_TagString: Untagged
@@ -344,6 +401,19 @@ Transform:
   m_Father: {fileID: 6615815443071277233}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1449477384459839862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443070895421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8238357, y: 0.83737564, z: 0.73201793}
+  m_Center: {x: -0.6588941, y: 0.01679935, z: 0.0063806484}
 --- !u!1 &6615815443070901547
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071358163}
+  - component: {fileID: 2956533200382479217}
   m_Layer: 0
   m_Name: TROLL_ L Thigh
   m_TagString: Untagged
@@ -375,6 +446,19 @@ Transform:
   m_Father: {fileID: 6615815443071277233}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2956533200382479217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443070901547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8238357, y: 0.83737564, z: 0.73201793}
+  m_Center: {x: -0.6588941, y: 0.01679935, z: 0.0063806484}
 --- !u!1 &6615815443070901579
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +623,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6615815443071360771}
   - component: {fileID: 6522584677767306321}
+  - component: {fileID: 1967816004960739336}
+  - component: {fileID: 5051489444342535667}
+  - component: {fileID: 6895348112558004813}
   m_Layer: 0
   m_Name: TROLL_LEGACY
   m_TagString: Untagged
@@ -581,6 +668,74 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1967816004960739336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071044317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32c409f5cb3e3645a149f0cab212005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6522584677767306321}
+  behaviour: {fileID: 11400000, guid: 2b3059c01fc1278498b5182398859382, type: 2}
+  deathTime: 3
+  selfTargetRoot: {fileID: 0}
+  enemyTarget: {fileID: 0}
+--- !u!114 &5051489444342535667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071044317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21175e1eea6a273468aa6038bfb53de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPercent: 1
+  fullValue: 50
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  onDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1967816004960739336}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6895348112558004813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071044317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e342bde2da45d409c1e83b39c2946a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackOnScreen: 0
+  ttl: 0
 --- !u!1 &6615815443071046373
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071345845}
+  - component: {fileID: 3139133295655952089}
   m_Layer: 0
   m_Name: TROLL_ L Foot
   m_TagString: Untagged
@@ -642,6 +798,19 @@ Transform:
   m_Father: {fileID: 6615815443071364805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3139133295655952089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071046683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5018214, y: 1.0765887, z: 0.8594627}
+  m_Center: {x: -0.18527523, y: 0.10217171, z: -0.0063914475}
 --- !u!1 &6615815443071049275
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071339585}
+  - component: {fileID: 6343817855428161577}
   m_Layer: 0
   m_Name: TROLL_ L UpperArm
   m_TagString: Untagged
@@ -704,6 +874,19 @@ Transform:
   m_Father: {fileID: 6615815443071244391}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6343817855428161577
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071049645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3915304, y: 0.7730713, z: 0.6729605}
+  m_Center: {x: -0.669505, y: 0.03781751, z: 0.016868379}
 --- !u!1 &6615815443071049789
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +1110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071321295}
+  - component: {fileID: 1570665900813954611}
   m_Layer: 0
   m_Name: TROLL_ L Forearm
   m_TagString: Untagged
@@ -949,6 +1133,19 @@ Transform:
   m_Father: {fileID: 6615815443071339585}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1570665900813954611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071058865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4197546, y: 0.69240856, z: 0.6370547}
+  m_Center: {x: -0.55760705, y: 0.066761345, z: 0.005555802}
 --- !u!1 &6615815443071069485
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +1155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071261539}
+  - component: {fileID: 5023524126676688835}
   m_Layer: 0
   m_Name: TROLL_ Spine
   m_TagString: Untagged
@@ -980,6 +1178,19 @@ Transform:
   m_Father: {fileID: 6615815443071277233}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5023524126676688835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071069485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.97838485, y: 1.3597857, z: 1.5493867}
+  m_Center: {x: -0.40524456, y: 0.122901104, z: -0.019074809}
 --- !u!1 &6615815443071073691
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071364381}
+  - component: {fileID: 1784148151667056767}
   m_Layer: 0
   m_Name: TROLL_ R Forearm
   m_TagString: Untagged
@@ -1011,6 +1223,19 @@ Transform:
   m_Father: {fileID: 6615815443071323935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1784148151667056767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071073691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4197546, y: 0.69240856, z: 0.6370547}
+  m_Center: {x: -0.55760705, y: 0.066761345, z: 0.005555802}
 --- !u!1 &6615815443071073877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071277233}
+  - component: {fileID: 7473168959457665367}
   m_Layer: 0
   m_Name: TROLL_ Pelvis
   m_TagString: Untagged
@@ -1074,6 +1300,19 @@ Transform:
   m_Father: {fileID: 6615815443071242899}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7473168959457665367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071075061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9745881, y: 1.2320207, z: 1.7027023}
+  m_Center: {x: -0.012705893, y: 0.026046578, z: -0.019186499}
 --- !u!1 &6615815443071077191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071323105}
+  - component: {fileID: 1477097526201706377}
   m_Layer: 0
   m_Name: TROLL_ Spine1
   m_TagString: Untagged
@@ -1105,6 +1345,19 @@ Transform:
   m_Father: {fileID: 6615815443071261539}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1477097526201706377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071077191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0310078, y: 1.32667, z: 1.6386809}
+  m_Center: {x: -0.71887976, y: -0.06830278, z: -0.000024476478}
 --- !u!1 &6615815443071078821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071248355}
+  - component: {fileID: 3490151478417862235}
   m_Layer: 0
   m_Name: TROLL_ L Hand
   m_TagString: Untagged
@@ -1138,6 +1392,19 @@ Transform:
   m_Father: {fileID: 6615815443071321295}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3490151478417862235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071078821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2141919, y: 0.5925252, z: 0.93659943}
+  m_Center: {x: -0.67588586, y: 0.08336492, z: -0.08239408}
 --- !u!1 &6615815443071080095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071361663}
+  - component: {fileID: 7513687372066407932}
   m_Layer: 0
   m_Name: TROLL_ R Foot
   m_TagString: Untagged
@@ -1231,6 +1499,19 @@ Transform:
   m_Father: {fileID: 6615815443071248959}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7513687372066407932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071083277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5018214, y: 1.0765887, z: 0.8594627}
+  m_Center: {x: -0.18527523, y: 0.10217171, z: -0.0063914475}
 --- !u!1 &6615815443071083921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071359533}
+  - component: {fileID: 6726410138344347244}
   m_Layer: 0
   m_Name: TROLL_ Head
   m_TagString: Untagged
@@ -1262,6 +1544,19 @@ Transform:
   m_Father: {fileID: 6615815443071329451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6726410138344347244
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071083921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82367617, y: 1.0092992, z: 0.6806031}
+  m_Center: {x: -0.229034, y: 0.16292435, z: 0.0065443227}
 --- !u!1 &6615815443071084263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615815443071364805}
+  - component: {fileID: 5777932069581171793}
   m_Layer: 0
   m_Name: TROLL_ L Calf
   m_TagString: Untagged
@@ -1293,6 +1589,19 @@ Transform:
   m_Father: {fileID: 6615815443071358163}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5777932069581171793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615815443071084263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3360466, y: 0.62979376, z: 0.6548564}
+  m_Center: {x: -0.24627161, y: -0.08145093, z: 0.019465616}
 --- !u!1 &6615815443071087651
 GameObject:
   m_ObjectHideFlags: 0
