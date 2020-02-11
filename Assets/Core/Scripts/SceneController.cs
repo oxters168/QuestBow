@@ -3,8 +3,8 @@
 public class SceneController : MonoBehaviour
 {
     public static SceneController sceneControllerInScene { get; private set; }
-    public static bool menuShown { get { return sceneControllerInScene.gameModeMenu.activeSelf; } }
-    public GameObject gameModeMenu, locationMenu;
+    public static bool menuShown { get { return sceneControllerInScene.gameModeMenu.enabled; } }
+    public Canvas gameModeMenu, locationMenu;
     public OculusInputController mainInput;
     public HUDController hud;
 
@@ -65,9 +65,21 @@ public class SceneController : MonoBehaviour
     {
         SetGameModeStatic(WorldData.GameType.horde, level);
     }
+    public void EndGame()
+    {
+        Doozy.Engine.GameEventMessage.SendEvent("GotoGameOver");
+
+        sceneControllerInScene.scenes[sceneControllerInScene.currentScene].SetGameMode(WorldData.GameType.none);
+
+        ApplyModeChange();
+    }
     public static void SetGameModeStatic(WorldData.GameType gameMode, int level)
     {
+        if (gameMode != WorldData.GameType.none)
+            Doozy.Engine.GameEventMessage.SendEvent("GotoPause");
+
         sceneControllerInScene.scenes[sceneControllerInScene.currentScene].SetGameMode(gameMode, level);
+
         ApplyModeChange();
     }
     public static WorldData.GameType GetCurrentGameMode()
@@ -80,7 +92,7 @@ public class SceneController : MonoBehaviour
         canAccessGameModeMenu = onOff;
     }
 
-    public static void ApplyModeChange()
+    private static void ApplyModeChange()
     {
         bool inGame = GetCurrentGameMode() != WorldData.GameType.none;
         bool inGameLocation = sceneControllerInScene.currentScene != 0;
@@ -94,14 +106,26 @@ public class SceneController : MonoBehaviour
         sceneControllerInScene.SetMenuAccess(inGameLocation);
         ShowGameModeMenu(inGameLocation && !inGame);
         ShowLocationMenu(!inGameLocation);
+
+        OVRManager.fixedFoveatedRenderingLevel = inGame ? OVRManager.FixedFoveatedRenderingLevel.HighTop : OVRManager.FixedFoveatedRenderingLevel.Off; //This seems like an appropriate place
     }
     public static void ShowGameModeMenu(bool onOff)
     {
-        sceneControllerInScene.gameModeMenu.SetActive(onOff);
+        sceneControllerInScene.gameModeMenu.enabled = onOff;
+        sceneControllerInScene.gameModeMenu.sortingOrder = onOff ? 1 : 0;
+
+        var raycasters = sceneControllerInScene.gameModeMenu.GetComponentsInChildren<OVRRaycaster>();
+        foreach (var raycaster in raycasters)
+            raycaster.sortOrder = onOff ? 1 : 0;
     }
     public static void ShowLocationMenu(bool onOff)
     {
-        sceneControllerInScene.locationMenu.SetActive(onOff);
+        sceneControllerInScene.locationMenu.enabled = onOff;
+        sceneControllerInScene.locationMenu.sortingOrder = onOff ? 1 : 0;
+
+        var raycasters = sceneControllerInScene.locationMenu.GetComponentsInChildren<OVRRaycaster>();
+        foreach (var raycaster in raycasters)
+            raycaster.sortOrder = onOff ? 1 : 0;
     }
 
     public static void ShowSceneStatic(int sceneIndex)

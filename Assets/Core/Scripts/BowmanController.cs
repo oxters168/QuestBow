@@ -53,7 +53,6 @@ public class BowmanController : MonoBehaviour
     private void Start()
     {
         ShowOrientation(false);
-        OVRManager.fixedFoveatedRenderingLevel = OVRManager.FixedFoveatedRenderingLevel.HighTop; //Will change where this is called to be more appropriate
     }
     private void Update()
     {
