@@ -3,7 +3,9 @@
 public class SceneController : MonoBehaviour
 {
     public static SceneController sceneControllerInScene { get; private set; }
-    public static bool menuShown { get { return sceneControllerInScene.gameModeMenu.enabled; } }
+    public static bool modesMenuShown { get { return sceneControllerInScene.gameModeMenu.enabled; } }
+    public static bool locationsMenuShown { get { return sceneControllerInScene.locationMenu.enabled; } }
+    public GameObject uiHelpers;
     public Canvas gameModeMenu, locationMenu;
     public OculusInputController mainInput;
     public HUDController hud;
@@ -26,7 +28,8 @@ public class SceneController : MonoBehaviour
     {
         UpdateHUD();
         if (mainInput.backButtonDown)
-            ShowGameModeMenu(!menuShown);
+            ShowGameModeMenu(!modesMenuShown);
+        uiHelpers.SetActive(modesMenuShown || locationsMenuShown);
     }
 
     private void UpdateHUD()
