@@ -54,6 +54,7 @@ public class TargetGame : GenericGame
         lastTargetShown = float.MinValue; //If playing random targets, this will make the next target appear
 
         totalScore += arrow.scoreTarget.score;
+        StatsViewController.SetScore(totalScore);
         //PlayHitAt(caller.transform.position);
     }
 
@@ -132,6 +133,7 @@ public class TargetGame : GenericGame
 
         chosenLevel = level;
         SetTargetsActive(true);
+        StatsViewController.SetScore(0);
 
         getReadyRoutine = StartCoroutine(CommonRoutines.WaitToDoAction((isReady) =>
         {
