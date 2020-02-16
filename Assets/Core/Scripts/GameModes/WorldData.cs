@@ -63,6 +63,14 @@ public class WorldData : MonoBehaviour
             roundTime = gameMode.GetRoundTime();
         return roundTime;
     }
+    public bool GetIsPlaying()
+    {
+        bool inGame = false;
+        var gameMode = GetCurrentGameMode();
+        if (gameMode != null)
+            inGame = gameMode.IsPlaying();
+        return inGame;
+    }
     public GenericGame GetCurrentGameMode()
     {
         GenericGame gameMode = null;

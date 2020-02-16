@@ -38,6 +38,7 @@ public class SceneController : MonoBehaviour
         hud.score = scenes[currentScene].GetScore();
         hud.startCountdown = scenes[currentScene].GetCountdownTime() - (Time.time - scenes[currentScene].GetRoundTimeStarted());
         hud.roundTimeLeft = (scenes[currentScene].GetRoundTime() + scenes[currentScene].GetCountdownTime()) - (Time.time - scenes[currentScene].GetRoundTimeStarted());
+        hud.showGetReady = !scenes[currentScene].GetIsPlaying() && scenes[currentScene].GetRoundTime() > 0;
     }
 
     public void SetTargetGameRandomInterval(float seconds)
@@ -115,20 +116,33 @@ public class SceneController : MonoBehaviour
     public static void ShowGameModeMenu(bool onOff)
     {
         sceneControllerInScene.gameModeMenu.enabled = onOff;
-        sceneControllerInScene.gameModeMenu.sortingOrder = onOff ? 1 : 0;
+        OVREnabler(sceneControllerInScene.gameModeMenu.transform, onOff);
+        //sceneControllerInScene.gameModeMenu.sortingOrder = onOff ? 1 : 0;
 
-        var raycasters = sceneControllerInScene.gameModeMenu.GetComponentsInChildren<OVRRaycaster>();
-        foreach (var raycaster in raycasters)
-            raycaster.sortOrder = onOff ? 1 : 0;
+        //var raycasters = sceneControllerInScene.gameModeMenu.GetComponentsInChildren<OVRRaycaster>();
+        //foreach (var raycaster in raycasters)
+        //    raycaster.sortOrder = onOff ? 1 : 0;
     }
     public static void ShowLocationMenu(bool onOff)
     {
         sceneControllerInScene.locationMenu.enabled = onOff;
-        sceneControllerInScene.locationMenu.sortingOrder = onOff ? 1 : 0;
+        OVREnabler(sceneControllerInScene.locationMenu.transform, onOff);
+        //sceneControllerInScene.locationMenu.sortingOrder = onOff ? 1 : 0;
 
-        var raycasters = sceneControllerInScene.locationMenu.GetComponentsInChildren<OVRRaycaster>();
-        foreach (var raycaster in raycasters)
-            raycaster.sortOrder = onOff ? 1 : 0;
+        //var raycasters = sceneControllerInScene.locationMenu.GetComponentsInChildren<OVRRaycaster>();
+        //foreach (var raycaster in raycasters)
+        //    raycaster.sortOrder = onOff ? 1 : 0;
+    }
+    private static void OVREnabler(Transform root, bool onOff)
+    {
+        var ovrs = root.GetComponentsInChildren<OVRRaycaster>();
+        foreach (var ovr in ovrs)
+        {
+            if (onOff)
+                ovr.enabled = ovr.gameObject.activeSelf;
+            else
+                ovr.enabled = false;
+        }
     }
 
     public static void ShowSceneStatic(int sceneIndex)

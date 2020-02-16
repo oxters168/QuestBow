@@ -29,6 +29,8 @@ public class TargetGame : GenericGame
 
     public WarningsController warnings;
 
+    Coroutine getReadyRoutine;
+
     private void Start()
     {
         practiceTarget.onArrowHit += Target_onArrowHit;
@@ -69,17 +71,13 @@ public class TargetGame : GenericGame
                 SetPracticeDistance(10);
                 SetPracticeHeight(1);
                 practiceTarget.gameObject.SetActive(true);
-                PlayAppearedAt(practiceTarget.transform.position);
+                //PlayAppearedAt(practiceTarget.transform.position);
             }
             else if (chosenLevel == 1)
             {
                 olympicTarget.gameObject.SetActive(true);
-                PlayAppearedAt(olympicTarget.transform.position);
+                //PlayAppearedAt(olympicTarget.transform.position);
             }
-            //else if (chosenLevel == 2)
-            //{
-            //    blitzTarget.gameObject.SetActive(true);
-            //}
         }
     }
     private void UpdateRandomTargets()
@@ -127,7 +125,6 @@ public class TargetGame : GenericGame
     public override void StartGame(int level)
     {
         totalScore = 0;
-        roundStartedAt = Time.time;
 
         startArrowsFiredCount = SceneController.sceneControllerInScene.bowman.totalArrowsFired;
         SceneController.sceneControllerInScene.bowman.onArrowShot += Bowman_onArrowShot;
@@ -135,12 +132,20 @@ public class TargetGame : GenericGame
 
         chosenLevel = level;
         SetTargetsActive(true);
-        inGame = true;
+
+        getReadyRoutine = StartCoroutine(CommonRoutines.WaitToDoAction((isReady) =>
+        {
+            inGame = true;
+            roundStartedAt = Time.time;
+        }, 0, () => { return SceneController.sceneControllerInScene.bowman.bowHeld; }));
 
         SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
     public override void EndGame()
     {
+        if (getReadyRoutine != null)
+            StopCoroutine(getReadyRoutine);
+
         chosenLevel = -1;
 
         SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;

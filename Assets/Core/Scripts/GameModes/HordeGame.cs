@@ -3,6 +3,17 @@ using UnityHelpers;
 
 public class HordeGame : GenericGame
 {
+    private readonly GameVariables[] levelVariables = new GameVariables[]
+    {
+        new GameVariables() { name = "Practice", arrows = -1, countdownTime = 0, roundTime = -1 },
+        new GameVariables() { name = "Waves", arrows = -1, countdownTime = 3, roundTime = -1 },
+    };
+
+    private int startArrowsFiredCount;
+    public int totalScore { get; private set; }
+    private float roundStartedAt;
+    private int chosenLevel;
+
     public PoolSpawner[] enemySpawns;
     private bool inGame;
 
@@ -13,8 +24,15 @@ public class HordeGame : GenericGame
     }
     public override void StartGame(int level)
     {
-        SetEnemiesActive(true);
+        roundStartedAt = Time.time;
+        totalScore = 0;
+        startArrowsFiredCount = SceneController.sceneControllerInScene.bowman.totalArrowsFired;
+
         inGame = true;
+
+        chosenLevel = level;
+
+        SetEnemiesActive(true);
 
         SceneController.sceneControllerInScene.bowman.canShoot = true;
     }
@@ -24,15 +42,24 @@ public class HordeGame : GenericGame
     }
     public override int GetLevelArrowCount()
     {
-        return 1;
+        int arrowCount = 0;
+        if (chosenLevel >= 0)
+            arrowCount = levelVariables[chosenLevel].arrows;
+        return arrowCount;
     }
     public override int GetArrowsLeft()
     {
-        return GetLevelArrowCount();
+        int arrowsLeft = GetLevelArrowCount();
+        if (arrowsLeft >= 0)
+            arrowsLeft -= SceneController.sceneControllerInScene.bowman.totalArrowsFired - startArrowsFiredCount;
+        else
+            arrowsLeft = int.MaxValue;
+
+        return arrowsLeft;
     }
     public override int GetScore()
     {
-        return 0;
+        return totalScore;
     }
 
     private void SetEnemiesActive(bool onOff)
@@ -47,16 +74,22 @@ public class HordeGame : GenericGame
 
     public override float GetRoundStartTime()
     {
-        return 0;
+        return roundStartedAt;
     }
 
     public override float GetCountdownTime()
     {
-        return 0;
+        float countdownTime = 0;
+        if (chosenLevel >= 0)
+            countdownTime = levelVariables[chosenLevel].countdownTime;
+        return countdownTime;
     }
 
     public override float GetRoundTime()
     {
-        return -1;
+        float roundTime = -1;
+        if (chosenLevel >= 0)
+            roundTime = levelVariables[chosenLevel].roundTime;
+        return roundTime;
     }
 }
