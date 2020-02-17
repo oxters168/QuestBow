@@ -57,6 +57,15 @@ public class TargetGame : GenericGame
         StatsViewController.SetScore(totalScore);
         //PlayHitAt(caller.transform.position);
     }
+    private void Bowman_onArrowShot()
+    {
+        if (inGame && GetArrowsLeft() <= 0)
+        {
+            //SceneController.sceneControllerInScene.bowman.canShoot = false;
+            DoEndGameSequence();
+        }
+    }
+
 
     private void SetTargetsActive(bool onOff)
     {
@@ -85,17 +94,31 @@ public class TargetGame : GenericGame
     {
         if (inGame && chosenLevel == 2 && (Time.time - roundStartedAt) > GetCountdownTime())
         {
-            if (Time.time - lastTargetShown >= randomTargetTime)
+            if ((Time.time - roundStartedAt) <= GetCountdownTime() + GetRoundTime())
             {
-                blitzTarget.transform.position = new Vector3(Random.Range(-1f, 1f) * targetAreaSize.x / 2, Random.Range(-1f, 1f) * targetAreaSize.y / 2, Random.Range(-1f, 1f) * targetAreaSize.z / 2) + targetAreaCenter;
-                blitzTarget.transform.forward = (SceneController.sceneControllerInScene.bowman.transform.position - blitzTarget.transform.position).normalized;
-                blitzTarget.gameObject.SetActive(true);
-                PlayAppearedAt(blitzTarget.transform.position);
-                lastTargetShown = Time.time;
+                if (Time.time - lastTargetShown >= randomTargetTime)
+                {
+                    blitzTarget.transform.position = new Vector3(Random.Range(-1f, 1f) * targetAreaSize.x / 2, Random.Range(-1f, 1f) * targetAreaSize.y / 2, Random.Range(-1f, 1f) * targetAreaSize.z / 2) + targetAreaCenter;
+                    blitzTarget.transform.forward = (SceneController.sceneControllerInScene.bowman.transform.position - blitzTarget.transform.position).normalized;
+                    blitzTarget.gameObject.SetActive(true);
+                    PlayAppearedAt(blitzTarget.transform.position);
+                    lastTargetShown = Time.time;
+                }
+            }
+            else
+            {
+                DoEndGameSequence();
             }
         }
         else
             lastTargetShown = float.MinValue;
+    }
+    private void DoEndGameSequence()
+    {
+        SceneController.EndGame();
+        SceneController.ShowGameModeMenu(true);
+        //EndGame();
+        //ShowGameOver();
     }
     public void SetRandomTargetInterval(float seconds)
     {
@@ -150,6 +173,7 @@ public class TargetGame : GenericGame
 
         chosenLevel = -1;
 
+        SceneController.sceneControllerInScene.bowman.canShoot = false;
         SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;
         SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
 
@@ -176,12 +200,6 @@ public class TargetGame : GenericGame
     public override int GetScore()
     {
         return totalScore;
-    }
-
-    private void Bowman_onArrowShot()
-    {
-        if (inGame && GetArrowsLeft() <= 0)
-            SceneController.sceneControllerInScene.bowman.canShoot = false;
     }
 
     public override bool IsPlaying()

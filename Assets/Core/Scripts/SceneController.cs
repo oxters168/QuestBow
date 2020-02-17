@@ -69,9 +69,9 @@ public class SceneController : MonoBehaviour
     {
         SetGameModeStatic(WorldData.GameType.horde, level);
     }
-    public void EndGame()
+    public static void EndGame()
     {
-        Doozy.Engine.GameEventMessage.SendEvent("GotoGameOver");
+        ShowGameOverView();
 
         sceneControllerInScene.scenes[sceneControllerInScene.currentScene].SetGameMode(WorldData.GameType.none);
 
@@ -80,11 +80,19 @@ public class SceneController : MonoBehaviour
     public static void SetGameModeStatic(WorldData.GameType gameMode, int level)
     {
         if (gameMode != WorldData.GameType.none)
-            Doozy.Engine.GameEventMessage.SendEvent("GotoPause");
+            ShowPauseView();
 
         sceneControllerInScene.scenes[sceneControllerInScene.currentScene].SetGameMode(gameMode, level);
 
         ApplyModeChange();
+    }
+    public static void ShowGameOverView()
+    {
+        Doozy.Engine.GameEventMessage.SendEvent("GotoGameOver");
+    }
+    public static void ShowPauseView()
+    {
+        Doozy.Engine.GameEventMessage.SendEvent("GotoPause");
     }
     public static WorldData.GameType GetCurrentGameMode()
     {
