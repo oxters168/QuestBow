@@ -23,7 +23,7 @@ public class BowmanController : MonoBehaviour
 
     public Transform bowDock;
     public bool bowHeld;
-    public bool canShoot;
+    public bool canShoot { get; private set; }
     public event ArrowShotHandler onArrowShot;
     public delegate void ArrowShotHandler();
 
@@ -74,6 +74,15 @@ public class BowmanController : MonoBehaviour
 
         if (debugValues)
             DebugValues();
+    }
+
+    public void SetCanShoot(bool onOff)
+    {
+        canShoot = onOff;
+        arrowHeld = false;
+        arrowInPlace = false;
+        pullDistance = 0;
+        bowHeld = false;
     }
 
     private void HeavyCalculations()

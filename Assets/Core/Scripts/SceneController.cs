@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour
     private void Update()
     {
         UpdateHUD();
-        if (mainInput.backButtonDown)
+        if (mainInput.backButtonDown && canAccessGameModeMenu)
             ShowGameModeMenu(!modesMenuShown);
         uiHelpers.SetActive(modesMenuShown || locationsMenuShown);
     }
@@ -69,7 +69,11 @@ public class SceneController : MonoBehaviour
     {
         SetGameModeStatic(WorldData.GameType.horde, level);
     }
-    public static void EndGame()
+    public void EndGame()
+    {
+        EndGameStatic();
+    }
+    public static void EndGameStatic()
     {
         ShowGameOverView();
 
@@ -99,9 +103,9 @@ public class SceneController : MonoBehaviour
         return sceneControllerInScene.scenes[sceneControllerInScene.currentScene].currentGameMode;
     }
 
-    public void SetMenuAccess(bool onOff)
+    public static void SetMenuAccess(bool onOff)
     {
-        canAccessGameModeMenu = onOff;
+        sceneControllerInScene.canAccessGameModeMenu = onOff;
     }
 
     private static void ApplyModeChange()
@@ -115,7 +119,7 @@ public class SceneController : MonoBehaviour
             hidden.SetActive(!inGame);
 
         sceneControllerInScene.bowman.gameObject.SetActive(inGame);
-        sceneControllerInScene.SetMenuAccess(inGameLocation);
+        SetMenuAccess(inGameLocation);
         ShowGameModeMenu(inGameLocation && !inGame);
         ShowLocationMenu(!inGameLocation);
 

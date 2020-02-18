@@ -27,6 +27,9 @@ public class TargetGame : GenericGame
     private float randomTargetTime = 4;
     private float lastTargetShown = float.MinValue;
 
+    private bool gameEnding;
+    private float endGameWaitTime = 5;
+
     public WarningsController warnings;
 
     Coroutine getReadyRoutine;
@@ -77,6 +80,8 @@ public class TargetGame : GenericGame
         {
             if (chosenLevel == 0)
             {
+                OptionsPanelController.ShowTargetsPracticeOption(true);
+
                 practiceTarget.transform.forward = Vector3.forward;
                 SetPracticeDistance(10);
                 SetPracticeHeight(1);
@@ -87,6 +92,10 @@ public class TargetGame : GenericGame
             {
                 olympicTarget.gameObject.SetActive(true);
                 //PlayAppearedAt(olympicTarget.transform.position);
+            }
+            else if (chosenLevel == 2)
+            {
+                OptionsPanelController.ShowTargetsBlitzOptions(true);
             }
         }
     }
@@ -105,18 +114,23 @@ public class TargetGame : GenericGame
                     lastTargetShown = Time.time;
                 }
             }
-            else
-            {
+            else if (!gameEnding)
                 DoEndGameSequence();
-            }
         }
         else
             lastTargetShown = float.MinValue;
     }
     private void DoEndGameSequence()
     {
-        SceneController.EndGame();
-        SceneController.ShowGameModeMenu(true);
+        gameEnding = true;
+        SceneController.SetMenuAccess(false);
+        SceneController.ShowGameModeMenu(false);
+        SceneController.sceneControllerInScene.bowman.SetCanShoot(false);
+        StartCoroutine(CommonRoutines.WaitToDoAction((success) =>
+        {
+            SceneController.EndGameStatic();
+            SceneController.ShowGameModeMenu(true);
+        }, endGameWaitTime));
         //EndGame();
         //ShowGameOver();
     }
@@ -164,7 +178,7 @@ public class TargetGame : GenericGame
             roundStartedAt = Time.time;
         }, 0, () => { return SceneController.sceneControllerInScene.bowman.bowHeld; }));
 
-        SceneController.sceneControllerInScene.bowman.canShoot = true;
+        SceneController.sceneControllerInScene.bowman.SetCanShoot(true);
     }
     public override void EndGame()
     {
@@ -173,12 +187,13 @@ public class TargetGame : GenericGame
 
         chosenLevel = -1;
 
-        SceneController.sceneControllerInScene.bowman.canShoot = false;
+        SceneController.sceneControllerInScene.bowman.SetCanShoot(false);
         SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;
         SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
 
         SetTargetsActive(false);
         inGame = false;
+        gameEnding = false;
     }
     public override int GetLevelArrowCount()
     {

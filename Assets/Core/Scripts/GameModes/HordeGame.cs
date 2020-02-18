@@ -34,7 +34,7 @@ public class HordeGame : GenericGame
 
         SetEnemiesActive(true);
 
-        SceneController.sceneControllerInScene.bowman.canShoot = true;
+        SceneController.sceneControllerInScene.bowman.SetCanShoot(true);
     }
     public override bool IsPlaying()
     {
