@@ -21,6 +21,7 @@ public class HordeGame : GenericGame
     {
         SetEnemiesActive(false);
         inGame = false;
+        SceneController.sceneControllerInScene.bowman.SetCanShoot(false);
     }
     public override void StartGame(int level)
     {

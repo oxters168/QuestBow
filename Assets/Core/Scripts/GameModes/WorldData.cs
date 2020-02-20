@@ -12,13 +12,13 @@ public class WorldData : MonoBehaviour
 
     public void SetGameMode(GameType gameMode, int difficulty = 0)
     {
+        if (currentGameMode != GameType.none)
+            gameModes[(int)currentGameMode - 1].EndGame();
+
         currentGameMode = gameMode;
 
-        for (int i = 0; i < gameModes.Length; i++)
-            if (i + 1 == (int)currentGameMode)
-                gameModes[i].StartGame(difficulty);
-            else
-                gameModes[i].EndGame();
+        if (currentGameMode != GameType.none)
+            gameModes[(int)currentGameMode - 1].StartGame(difficulty);
     }
 
     public int GetArrowsLeft()

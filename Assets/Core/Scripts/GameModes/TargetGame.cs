@@ -32,7 +32,7 @@ public class TargetGame : GenericGame
 
     public WarningsController warnings;
 
-    Coroutine getReadyRoutine;
+    private Coroutine getReadyRoutine;
 
     private void Start()
     {
@@ -172,13 +172,23 @@ public class TargetGame : GenericGame
         SetTargetsActive(true);
         StatsViewController.SetScore(0);
 
+        //if (chosenLevel == 2)
+            WaitForReady();
+        //else
+        //{
+        //    inGame = true;
+        //    roundStartedAt = Time.time;
+        //}
+
+        SceneController.sceneControllerInScene.bowman.SetCanShoot(true);
+    }
+    private void WaitForReady()
+    {
         getReadyRoutine = StartCoroutine(CommonRoutines.WaitToDoAction((isReady) =>
         {
             inGame = true;
             roundStartedAt = Time.time;
         }, 0, () => { return SceneController.sceneControllerInScene.bowman.bowHeld; }));
-
-        SceneController.sceneControllerInScene.bowman.SetCanShoot(true);
     }
     public override void EndGame()
     {
