@@ -51,27 +51,30 @@ public class StatsViewController : MonoBehaviour
     {
         arrowsHit = value;
         UpdateAccuracy();
-        SetValueOfLabel(statsViewInScene.arrowsShotLabel, value);
+        SetValueOfLabel(statsViewInScene.arrowsHitLabel, value);
     }
     private static void UpdateAccuracy()
     {
-        SetValueOfLabel(statsViewInScene.arrowsShotLabel, Mathf.RoundToInt(arrowsHit / (arrowsShot > 0 ? (float)arrowsShot : 1) * 100));
+        int percent = Mathf.RoundToInt(arrowsHit / (arrowsShot > 0 ? (float)arrowsShot : 1) * 100);
+        //SetValueOfLabel(statsViewInScene.accuracyLabel, Mathf.RoundToInt(arrowsHit / (arrowsShot > 0 ? (float)arrowsShot : 1) * 100));
+        statsViewInScene.accuracyLabel.gameObject.SetActive(true);
+        statsViewInScene.accuracyLabel.valueLabel.text = percent + "%";
     }
     public static void SetWavesDefeated(int value)
     {
-        SetValueOfLabel(statsViewInScene.arrowsShotLabel, value);
+        SetValueOfLabel(statsViewInScene.wavesDefeatedLabel, value);
     }
     public static void SetDamageDealt(int value)
     {
-        SetValueOfLabel(statsViewInScene.arrowsShotLabel, value);
+        SetValueOfLabel(statsViewInScene.damageDealtLabel, value);
     }
     public static void SetDamageReceived(int value)
     {
-        SetValueOfLabel(statsViewInScene.arrowsShotLabel, value);
+        SetValueOfLabel(statsViewInScene.damageReceivedLabel, value);
     }
     public static void SetAmountHealed(int value)
     {
-        SetValueOfLabel(statsViewInScene.arrowsShotLabel, value);
+        SetValueOfLabel(statsViewInScene.amountHealedLabel, value);
     }
 
     private static void SetValueOfLabel(StatListItem listItem, int value)

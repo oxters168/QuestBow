@@ -135,15 +135,18 @@ public class BowController : MonoBehaviour
             if (arrowsPool[i] != null)
                 Destroy(arrowsPool[i].gameObject);
     }
-    public void FireArrow()
+    public ArrowController FireArrow()
     {
+        ArrowController shotArrow = null;
         GetArrow((arrow) =>
         {
+            shotArrow = arrow;
             Vector3 fireVelocity = arrowFireSpot.forward * maxLaunchSpeed * pullPercent;
             arrow.Shoot(arrowFireSpot.position, arrowFireSpot.rotation, fireVelocity);
             onArrowSpawn?.Invoke(arrow.transform, null);
         });
         PlayArrowShotAudio();
+        return shotArrow;
     }
     private void GetArrow(System.Action<ArrowController> onGot)
     {

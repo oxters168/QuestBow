@@ -16,6 +16,7 @@ public class TargetGame : GenericGame
     private bool inGame;
     public int totalScore { get; private set; }
     private int startArrowsFiredCount;
+    private int totalArrowsHit;
     public AudioSource targetAppearAudio;
     public AudioSource targetHitAudio;
 
@@ -36,11 +37,9 @@ public class TargetGame : GenericGame
 
     private void Start()
     {
-        practiceTarget.onArrowHit += Target_onArrowHit;
-        olympicTarget.onArrowHit += Target_onArrowHit;
-        blitzTarget.onArrowHit += Target_onArrowHit;
-
-        //warnings.TrackObject(blitzTarget, 0, false);
+        //practiceTarget.onArrowHit += Target_onArrowHit;
+        //olympicTarget.onArrowHit += Target_onArrowHit;
+        //blitzTarget.onArrowHit += Target_onArrowHit;
     }
     private void Update()
     {
@@ -52,23 +51,37 @@ public class TargetGame : GenericGame
         Gizmos.DrawWireCube(targetAreaCenter, targetAreaSize);
     }
 
-    private void Target_onArrowHit(TargetController caller, ArrowController arrow)
-    {
-        lastTargetShown = float.MinValue; //If playing random targets, this will make the next target appear
-
-        totalScore += arrow.scoreTarget.score;
-        StatsViewController.SetScore(totalScore);
+    //private void Target_onArrowHit(TargetController caller, ArrowController arrow)
+    //{
         //PlayHitAt(caller.transform.position);
-    }
-    private void Bowman_onArrowShot()
+    //}
+    private void Bowman_onArrowShot(ArrowController arrow)
     {
+        arrow.onArrowHit += Arrow_onArrowHit;
+        StatsViewController.SetArrowsShot(SceneController.sceneControllerInScene.bowman.totalArrowsFired - startArrowsFiredCount);
+        StatsViewController.SetArrowsHit(totalArrowsHit);
         if (inGame && GetArrowsLeft() <= 0)
         {
-            //SceneController.sceneControllerInScene.bowman.canShoot = false;
             DoEndGameSequence();
         }
     }
+    private void Arrow_onArrowHit(ArrowController caller, TreeCollider.CollisionInfo ci)
+    {
+        var target = ci.collidedWith.GetComponentInParent<TargetController>();
+        if (target != null)
+        {
+            lastTargetShown = float.MinValue; //If playing random targets, this will make the next target appear
 
+            var scoreTarget = caller.scoreTarget;
+            if (scoreTarget != null)
+                totalScore += scoreTarget.score;
+            else
+                Debug.LogError("Could not get score from arrow on target");
+            StatsViewController.SetScore(totalScore);
+
+            StatsViewController.SetArrowsHit(++totalArrowsHit);
+        }
+    }
 
     private void SetTargetsActive(bool onOff)
     {
@@ -163,6 +176,7 @@ public class TargetGame : GenericGame
     public override void StartGame(int level)
     {
         totalScore = 0;
+        totalArrowsHit = 0;
 
         startArrowsFiredCount = SceneController.sceneControllerInScene.bowman.totalArrowsFired;
         SceneController.sceneControllerInScene.bowman.onArrowShot += Bowman_onArrowShot;
@@ -172,13 +186,7 @@ public class TargetGame : GenericGame
         SetTargetsActive(true);
         StatsViewController.SetScore(0);
 
-        //if (chosenLevel == 2)
-            WaitForReady();
-        //else
-        //{
-        //    inGame = true;
-        //    roundStartedAt = Time.time;
-        //}
+        WaitForReady();
 
         SceneController.sceneControllerInScene.bowman.SetCanShoot(true);
     }

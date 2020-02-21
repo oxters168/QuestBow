@@ -34,6 +34,9 @@ public class ArrowController : MonoBehaviour
     public float shotSpeedSqr;
     public float speedPercent { get; private set; }
 
+    public event ArrowHitHandler onArrowHit;
+    public delegate void ArrowHitHandler(ArrowController caller, TreeCollider.CollisionInfo ci);
+
     private void Start()
     {
         treeCollider.onCollided.AddListener(OnCollided);
@@ -54,6 +57,10 @@ public class ArrowController : MonoBehaviour
             previousVelocity = mainBody.velocity;
             previousForward = mainBody.transform.forward;
         }
+    }
+    private void OnDestroy()
+    {
+        onArrowHit = null; //I think this clears out subscriptions?
     }
 
     private void RefreshFlightAudio()
@@ -128,10 +135,34 @@ public class ArrowController : MonoBehaviour
                 hitBody.AddForce(previousVelocity, ForceMode.Impulse);
             #endregion
             #region Score
-            ArrowController otherArrow = colInfo.collidedWith.GetComponentInParent<ArrowController>();
-            if (otherArrow != null)
+            var target = colInfo.collidedWith.GetComponentInParent<TargetController>();
+            if (target != null)
             {
-                scoreTarget = otherArrow.scoreTarget;
+                var contactPoint = colInfo.collision.GetContact(0);
+                scoreTarget = target.GetScore(contactPoint.point);
+                //arrow.scoreTarget = GetScore(arrow.GetTipPosition());
+
+                if (scoreTarget != null)
+                {
+                    DebugPanel.Log("Arrow hit target", scoreTarget.score, 3);
+
+                    var scoresPool = PoolManager.GetPool("ScoresPool");
+                    scoresPool.Get<FlyingScoreController>(score =>
+                    {
+                        score.transform.position = transform.position;
+                        score.transform.forward = transform.forward;
+                        score.scoreLabel.text = scoreTarget.score.ToString();
+                        StartCoroutine(CommonRoutines.WaitToDoAction(s => { scoresPool.Return(score.transform); }, score.ttl));
+                    });
+                }
+                else
+                    DebugPanel.Log("Arrow hit target but somehow without a score", "", 3);
+            }
+            else
+            {
+                var otherArrow = colInfo.collidedWith.GetComponentInParent<ArrowController>();
+                if (otherArrow != null)
+                    scoreTarget = otherArrow.scoreTarget;
             }
             #endregion
             #region Penetration
@@ -149,6 +180,8 @@ public class ArrowController : MonoBehaviour
             }
             else
                 PlayHitAudio(colInfo.collidedWith.tag);
+
+            onArrowHit?.Invoke(this, colInfo);
             #endregion
         }
     }

@@ -10,6 +10,8 @@ public class BowmanController : MonoBehaviour
     public HandPose leftHandPose { get; private set; }
     public HandPose rightHandPose { get; private set; }
 
+    public HandController leftTouchControllerTrigger, rightTouchControllerTrigger;
+
     public GameObject leftTouchController, rightTouchController;
     public GameObject leftHand, rightHand;
 
@@ -25,7 +27,7 @@ public class BowmanController : MonoBehaviour
     public bool bowHeld;
     public bool canShoot { get; private set; }
     public event ArrowShotHandler onArrowShot;
-    public delegate void ArrowShotHandler();
+    public delegate void ArrowShotHandler(ArrowController arrow);
 
     public OculusInputController vrInput;
 
@@ -63,8 +65,8 @@ public class BowmanController : MonoBehaviour
         if (arrowHeld && arrowInPlace && ((arrowHand == Hand.left && !vrInput.leftTrigger) || (arrowHand == Hand.right && !vrInput.rightTrigger)) && canShoot)
         {
             totalArrowsFired++;
-            bow.FireArrow();
-            onArrowShot?.Invoke();
+            var arrow = bow.FireArrow();
+            onArrowShot?.Invoke(arrow);
         }
 
         UpdateShownHands();
@@ -87,8 +89,10 @@ public class BowmanController : MonoBehaviour
 
     private void HeavyCalculations()
     {
-        leftHandInQuiver = quiverBounds.IsPointInside(leftHandPosition);
-        rightHandInQuiver = quiverBounds.IsPointInside(rightHandPosition);
+        leftHandInQuiver = leftTouchControllerTrigger.isInQuiver;
+        rightHandInQuiver = rightTouchControllerTrigger.isInQuiver;
+        //leftHandInQuiver = quiverBounds.IsPointInside(leftHandPosition);
+        //rightHandInQuiver = quiverBounds.IsPointInside(rightHandPosition);
 
         quiverBoundsRenderer.material.color = leftHandInQuiver || rightHandInQuiver ? Color.green : Color.red;
     }
@@ -226,7 +230,7 @@ public class BowmanController : MonoBehaviour
             //bow.PlayBowSound();
         }
 
-        if (!bowHeld)
+        if (!bowHeld && canShoot)
         {
             if (leftGrip && leftHandInQuiver)
             {
@@ -312,7 +316,7 @@ public class BowmanController : MonoBehaviour
 
             quiverBoundsRenderer.material.color = Color.white;
         }
-        else
+        else if (canShoot)
         {
             arrowInPlace = false;
             pullDistance = 0;

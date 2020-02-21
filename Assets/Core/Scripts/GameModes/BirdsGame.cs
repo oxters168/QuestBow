@@ -10,6 +10,7 @@ public class BirdsGame : GenericGame
     };
 
     private int startArrowsFiredCount;
+    private int totalArrowsHit;
     public int totalScore { get; private set; }
     private float roundStartedAt;
     private int chosenLevel;
@@ -31,6 +32,22 @@ public class BirdsGame : GenericGame
             DoEndGameSequence();
     }
 
+    private void Bowman_onArrowShot(ArrowController arrow)
+    {
+        arrow.onArrowHit += Arrow_onArrowHit;
+        StatsViewController.SetArrowsShot(SceneController.sceneControllerInScene.bowman.totalArrowsFired - startArrowsFiredCount);
+        StatsViewController.SetArrowsHit(totalArrowsHit);
+    }
+    private void Arrow_onArrowHit(ArrowController caller, TreeCollider.CollisionInfo ci)
+    {
+        var bird = ci.collidedWith.GetComponentInParent<BirdController>();
+        if (bird != null)
+        {
+            StatsViewController.SetScore(++totalScore);
+            StatsViewController.SetArrowsHit(++totalArrowsHit);
+        }
+    }
+
     public override void EndGame()
     {
         if (getReadyRoutine != null)
@@ -41,24 +58,24 @@ public class BirdsGame : GenericGame
         SetBirdsActive(false);
         inGame = false;
         SceneController.sceneControllerInScene.bowman.SetCanShoot(false);
+        SceneController.sceneControllerInScene.bowman.onArrowShot -= Bowman_onArrowShot;
+        SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
     }
     public override void StartGame(int level)
     {
         roundStartedAt = Time.time;
         totalScore = 0;
+        totalArrowsHit = 0;
         startArrowsFiredCount = SceneController.sceneControllerInScene.bowman.totalArrowsFired;
         chosenLevel = level;
+        SceneController.sceneControllerInScene.bowman.onArrowShot += Bowman_onArrowShot;
+        SceneController.sceneControllerInScene.bowman.DestroyAllArrows();
 
         SetBirdsActive(true);
         SceneController.sceneControllerInScene.bowman.SetCanShoot(true);
+        StatsViewController.SetScore(0);
 
-        //if (chosenLevel == 1)
-            WaitForReady();
-        //else
-        //{
-        //    inGame = true;
-        //    roundStartedAt = Time.time;
-        //}
+        WaitForReady();
     }
     private void WaitForReady()
     {
