@@ -1,0 +1,121 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.1052; Version 2009; 64bit' Language: 'en' Physical Memory: 15789 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/oxter/Documents/Projects/Unity/QuestBow
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52674
+Successfully changed project path to: C:/Users/oxter/Documents/Projects/Unity/QuestBow
+C:/Users/oxter/Documents/Projects/Unity/QuestBow
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 495.70 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 1.47 ms.
+Initialize engine version: 2020.3.12f1 (b3b2c6512326)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/oxter/Documents/Projects/Unity/QuestBow/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 with Max-Q Design (ID=0x1f12)
+    Vendor:   
+    VRAM:     5980 MB
+    Driver:   30.0.14.7111
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56408
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002441 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 441.48 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 0.12 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.701 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.021449 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 4.56 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 0.13 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.929 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 3.35 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Unloading 4522 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 253.1 MB.
+System memory in use after: 253.3 MB.
+
+Unloading 184 unused Assets to reduce memory usage. Loaded Objects now: 4931.
+Total: 5.646600 ms (FindLiveObjects: 0.566800 ms CreateObjectMapping: 0.233900 ms MarkObjects: 4.675700 ms  DeleteObjects: 0.168200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Core/Scripts/BowmanController.cs
+  artifactKey: Guid(0e8c460da9000854d976ca614e02fdd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Scripts/BowmanController.cs using Guid(0e8c460da9000854d976ca614e02fdd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118db40e65fe8a94e71e61e3712a398d') in 0.041612 seconds 
+  Import took 0.051987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 321.571946 seconds.
+  path: Assets/Core/Scripts/SceneController.cs
+  artifactKey: Guid(6033d3db8db287e40a875ee5e0331ec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Scripts/SceneController.cs using Guid(6033d3db8db287e40a875ee5e0331ec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132d51f1a3e768886ea962a3951e38cb') in 0.017032 seconds 
+  Import took 0.034255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 82.450612 seconds.
+  path: Assets/Core/Textures/WesternPreview.png
+  artifactKey: Guid(397f8347ae7fd374eac302150112f563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/WesternPreview.png using Guid(397f8347ae7fd374eac302150112f563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c46c61ce0f135b8da39985734eaaf3c2') in 0.164167 seconds 
+  Import took 0.175824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.534729 seconds.
+  path: Assets/Core/Textures/PiratesPreview.png
+  artifactKey: Guid(21ba690c1e20b384dbf3b2ec944a8a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/PiratesPreview.png using Guid(21ba690c1e20b384dbf3b2ec944a8a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4807f10b19a501470b4fc62a0d5a3266') in 0.038280 seconds 
+  Import took 0.054421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.365027 seconds.
+  path: Assets/Core/Textures/Weapons_Bow_Mod.png
+  artifactKey: Guid(82f3e582a683fa24dabc0c84c3e88058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Weapons_Bow_Mod.png using Guid(82f3e582a683fa24dabc0c84c3e88058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf42fb1aeb9cecf769fcfb339c5a83fc') in 0.030833 seconds 
+  Import took 0.047167 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
